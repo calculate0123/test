@@ -69,21 +69,21 @@
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
 <h1 id="%E7%AC%AC%E4%B8%80%E7%AB%A0python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80">第一章：Python语言基础</h1>
-<font size=5>
-## 1.1 Python简介
-## 1.2 Python的环境配置
-## 1.3 基本语法
-## 1.4 控制流程
-## 1.5 函数
-## 1.6 模块
-## 1.7 文件I/O
-## 1.8 面向对象编程（OOP）
-## 1.9 方法
-## 1.10 动态分配内存
+<font size=4>
+<h2 id="11-python%E7%AE%80%E4%BB%8B">1.1 Python简介</h2>
+<h2 id="12-python%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">1.2 Python的环境配置</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">1.3 基本语法</h2>
+<h2 id="14-%E6%8E%A7%E5%88%B6%E6%B5%81%E7%A8%8B">1.4 控制流程</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0">1.5 函数</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97">1.6 模块</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io">1.7 文件I/O</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop">1.8 面向对象编程（OOP）</h2>
+<h2 id="19-%E6%96%B9%E6%B3%95">1.9 方法</h2>
+<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98">1.10 动态分配内存</h2>
 </font>
 ---
 <h1 id="%E7%AC%AC%E4%B8%80%E7%AB%A0python%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-1">第一章：Python语言基础</h1>
-<h2 id="11-python%E7%AE%80%E4%BB%8B">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-1">1.1 Python简介</h2>
 <font size=5>
 <p>本课程的重点是给大家引入<code>Python</code>基础下的<code>开源数值计算</code>。</p>
 <p><code>计算机编程</code>和<code>数值计算</code>是两个不同但相关的概念，它们有各自的定义：</p>
@@ -102,7 +102,7 @@
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-1">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-2">1.1 Python简介</h2>
 <font size=5>
 <p><code>数值计算</code>，是指使用计算机进行数学计算和数值近似的过程，通常用于解决复杂的数学问题，如数值模拟、求解方程、数值积分等。数值计算涉及使用数值方法和近似技巧来求解数学问题，而不是通过解析方法推导出精确解。它在科学、工程和其他领域中广泛应用，用于模拟自然现象、优化设计、数据分析等。</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入NumPy库</span>
@@ -128,7 +128,7 @@ sum_result = np.<span class="hljs-built_in">sum</span>(numbers)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-2">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-3">1.1 Python简介</h2>
 <font size=5>
 <p>计算机编程和数值计算之间存在密切的关系：</p>
 <p><em><code>数值计算是一种计算机应用领域</code></em>：数值计算是计算机编程的一个重要应用领域之一。它涉及使用计算机来解决数学问题，通常是通过近似方法和数值技巧来求解复杂的数学方程或进行数值模拟。</p>
@@ -146,7 +146,7 @@ sum_result = np.<span class="hljs-built_in">sum</span>(numbers)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-3">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-4">1.1 Python简介</h2>
 <p>数值计算与解析解的区别：</p>
 <font size=5>
 <table>
@@ -206,7 +206,7 @@ sum_result = np.<span class="hljs-built_in">sum</span>(numbers)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-4">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-5">1.1 Python简介</h2>
 <font size=5>
 <p>我们通过一个例子来说明数值计算和解析解之间的区别:</p>
 <p>考虑以下方程：</p>
@@ -226,7 +226,7 @@ sum_result = np.<span class="hljs-built_in">sum</span>(numbers)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-5">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-6">1.1 Python简介</h2>
 <font size=5>
 <p>数值计算：</p>
 <p>数值方法涉及使用数值技术来近似解，特别是在难以找到解析解时。解决方程的一种常见数值方法是<code>迭代方法</code>。</p>
@@ -246,7 +246,7 @@ sum_result = np.<span class="hljs-built_in">sum</span>(numbers)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-6">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-7">1.1 Python简介</h2>
 <font size=5>
 <p>从一个初始猜测开始，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.375ex;" xmlns="http://www.w3.org/2000/svg" width="6.43ex" height="1.881ex" role="img" focusable="false" viewBox="0 -666 2842.1 831.6"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="mn" transform="translate(605,-150) scale(0.707)"><path data-c="30" d="M96 585Q152 666 249 666Q297 666 345 640T423 548Q460 465 460 320Q460 165 417 83Q397 41 362 16T301 -15T250 -22Q224 -22 198 -16T137 16T82 83Q39 165 39 320Q39 494 96 585ZM321 597Q291 629 250 629Q208 629 178 597Q153 571 145 525T137 333Q137 175 145 125T181 46Q209 16 250 16Q290 16 318 46Q347 76 354 130T362 333Q362 478 354 524T321 597Z"></path></g></g><g data-mml-node="mo" transform="translate(1286.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="mn" transform="translate(2342.1,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></svg></mjx-container>，<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.471ex;" xmlns="http://www.w3.org/2000/svg" width="4.486ex" height="1.471ex" role="img" focusable="false" viewBox="0 -442 1982.9 650"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msub"><g data-mml-node="mi"><path data-c="1D465" d="M52 289Q59 331 106 386T222 442Q257 442 286 424T329 379Q371 442 430 442Q467 442 494 420T522 361Q522 332 508 314T481 292T458 288Q439 288 427 299T415 328Q415 374 465 391Q454 404 425 404Q412 404 406 402Q368 386 350 336Q290 115 290 78Q290 50 306 38T341 26Q378 26 414 59T463 140Q466 150 469 151T485 153H489Q504 153 504 145Q504 144 502 134Q486 77 440 33T333 -11Q263 -11 227 52Q186 -10 133 -10H127Q78 -10 57 16T35 71Q35 103 54 123T99 143Q142 143 142 101Q142 81 130 66T107 46T94 41L91 40Q91 39 97 36T113 29T132 26Q168 26 194 71Q203 87 217 139T245 247T261 313Q266 340 266 352Q266 380 251 392T217 404Q177 404 142 372T93 290Q91 281 88 280T72 278H58Q52 284 52 289Z"></path></g><g data-mml-node="TeXAtom" transform="translate(605,-150) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D45B" d="M21 287Q22 293 24 303T36 341T56 388T89 425T135 442Q171 442 195 424T225 390T231 369Q231 367 232 367L243 378Q304 442 382 442Q436 442 469 415T503 336T465 179T427 52Q427 26 444 26Q450 26 453 27Q482 32 505 65T540 145Q542 153 560 153Q580 153 580 145Q580 144 576 130Q568 101 554 73T508 17T439 -10Q392 -10 371 17T350 73Q350 92 386 193T423 345Q423 404 379 404H374Q288 404 229 303L222 291L189 157Q156 26 151 16Q138 -11 108 -11Q95 -11 87 -5T76 7T74 17Q74 30 112 180T152 343Q153 348 153 366Q153 405 129 405Q91 405 66 305Q60 285 60 284Q58 278 41 278H27Q21 284 21 287Z"></path></g><g data-mml-node="mo" transform="translate(600,0)"><path data-c="2B" d="M56 237T56 250T70 270H369V420L370 570Q380 583 389 583Q402 583 409 568V270H707Q722 262 722 250T707 230H409V-68Q401 -82 391 -82H389H387Q375 -82 369 -68V230H70Q56 237 56 250Z"></path></g><g data-mml-node="mn" transform="translate(1378,0)"><path data-c="31" d="M213 578L200 573Q186 568 160 563T102 556H83V602H102Q149 604 189 617T245 641T273 663Q275 666 285 666Q294 666 302 660V361L303 61Q310 54 315 52T339 48T401 46H427V0H416Q395 3 257 3Q121 3 100 0H88V46H114Q136 46 152 46T177 47T193 50T201 52T207 57T213 61V578Z"></path></g></g></g></g></g></svg></mjx-container> 逐渐逼近于2.</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">x0 = <span class="hljs-number">1</span>
@@ -270,7 +270,7 @@ x1 = x0
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-7">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-8">1.1 Python简介</h2>
 <p>实际上所有的数值计算都需要进行<code>迭代</code>。</p>
 <font size=4>
 <p><code>迭代格式涉及的典型数值计算方法</code>：</p>
@@ -293,7 +293,7 @@ x1 = x0
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="11-python%E7%AE%80%E4%BB%8B-8">1.1 Python简介</h2>
+<h2 id="11-python%E7%AE%80%E4%BB%8B-9">1.1 Python简介</h2>
 <font size=5>
 <p>数值计算涉及以下步骤：</p>
 <p><code>解方程</code>: 首先，数值计算要求将一个数学方程或问题转化为计算机可以处理的形式。这可能涉及将方程解出来以获得通用的解析解，通常表示为一个函数或表达式。</p>
@@ -706,7 +706,7 @@ x1 = x0
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="12-python%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE">1.2 Python的环境配置</h2>
+<h2 id="12-python%E7%9A%84%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE-1">1.2 Python的环境配置</h2>
 <h3 id="121-anaconda%E7%AE%80%E4%BB%8B">1.2.1 Anaconda简介</h3>
 <ul>
 <li>Anaconda是一个用于科学计算的Python发行版，支持Linux, Mac, Windows系统，提供了包管理与环境管理的功能，可以很方便地解决多版本python并存、切换以及各种第三方包安装问题。Anaconda包含了conda、Python在内的超过180个科学包及其依赖项。</li>
@@ -1068,7 +1068,7 @@ Anaconda个人版安装程序下载：https://www.anaconda.com/download
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95">1.3 基本语法</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-1">1.3 基本语法</h2>
 <ul>
 <li>
 <p>推荐学习网站：</p>
@@ -1090,7 +1090,7 @@ https://c.biancheng.net
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-1">1.3 基本语法</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-2">1.3 基本语法</h2>
 <p>Python的基本语法包括数据类型、变量、运算符和表达式。</p>
 <ol>
 <li>数据类型：<br />
@@ -1106,7 +1106,7 @@ Python支持多种数据类型，包括整数（int）、浮点数（float）、
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-2">1.3 基本语法</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-3">1.3 基本语法</h2>
 <ol start="2">
 <li>变量：<br />
 在Python中，变量用于存储数据值。你可以将数据值分配给变量，并随后引用这些变量以访问数据。变量名是标识符，通常以字母或下划线开头，后跟字母、数字或下划线。变量名区分大小写。<br />
@@ -1122,7 +1122,7 @@ Python支持多种数据类型，包括整数（int）、浮点数（float）、
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-3">1.3 基本语法</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-4">1.3 基本语法</h2>
 <ol start="3">
 <li>运算符：<br />
 Python提供了各种运算符，用于执行数学运算、逻辑运算和比较运算。常见的运算符包括加法、减法、乘法、除法、取余、逻辑与、逻辑或等。  运算符用于对数据进行操作和计算。<br />
@@ -1138,7 +1138,7 @@ Python提供了各种运算符，用于执行数学运算、逻辑运算和比�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-4">1.3 基本语法</h2>
+<h2 id="13-%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95-5">1.3 基本语法</h2>
 <ol start="3">
 <li>表达式：<br />
 表达式是由运算符和操作数（变量、常数或其他表达式）组成的组合，用于生成某个值。<br />
@@ -3656,7 +3656,7 @@ fibonacci = [<span class="hljs-number">0</span>, <span class="hljs-number">1</sp
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
 
-<h2 id="14-%E6%8E%A7%E5%88%B6%E6%B5%81%E7%A8%8B">1.4 控制流程</h2>
+<h2 id="14-%E6%8E%A7%E5%88%B6%E6%B5%81%E7%A8%8B-1">1.4 控制流程</h2>
 <ul>
 <li>Python通过一系列控制流程语句来管理程序的执行顺序。</li>
 <li>Python中的控制流程：
@@ -4481,7 +4481,7 @@ else:
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-1">1.5 函数</h2>
 <ul>
 <li>
 <p>函数是组织好的，可重复使用的，用来实现单一，或相关联功能的代码段。</p>
@@ -4506,7 +4506,7 @@ else:
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-1">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-2">1.5 函数</h2>
 <ul>
 <li>函数的定义规则：
 <ul>
@@ -4528,7 +4528,7 @@ else:
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-2">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-3">1.5 函数</h2>
 <ul>
 <li>函数的定义</li>
 </ul>
@@ -4552,7 +4552,7 @@ else:
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-3">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-4">1.5 函数</h2>
 <ul>
 <li>函数的调用
 <ul>
@@ -4579,7 +4579,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-4">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-5">1.5 函数</h2>
 <ul>
 <li>函数的调用</li>
 </ul>
@@ -4598,7 +4598,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-5">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-6">1.5 函数</h2>
 <ul>
 <li>函数的参数传递</li>
 </ul>
@@ -4644,7 +4644,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-6">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-7">1.5 函数</h2>
 <ul>
 <li>C++ 函数的参数传递</li>
 </ul>
@@ -4672,7 +4672,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-7">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-8">1.5 函数</h2>
 <ul>
 <li>C++ 函数的参数传递</li>
 </ul>
@@ -4701,7 +4701,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-8">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-9">1.5 函数</h2>
 <ul>
 <li>C++ 函数的参数传递</li>
 </ul>
@@ -4731,7 +4731,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-9">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-10">1.5 函数</h2>
 <ul>
 <li>C++ 函数的参数传递</li>
 </ul>
@@ -4761,7 +4761,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-10">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-11">1.5 函数</h2>
 <ul>
 <li>python 函数的参数传递
 <ul>
@@ -4784,7 +4784,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-11">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-12">1.5 函数</h2>
 <ul>
 <li>
 <p>python 函数的参数传递：<br />
@@ -4807,7 +4807,7 @@ printme(<span class="hljs-string">&quot;再次调用同一函数&quot;</span>)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-12">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-13">1.5 函数</h2>
 <ul>
 <li>python 传不可变对象：</li>
 </ul>
@@ -4829,7 +4829,7 @@ ChangeInt(b)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-13">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-14">1.5 函数</h2>
 <ul>
 <li>python 传可变对象：</li>
 </ul>
@@ -4859,7 +4859,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="15-%E5%87%BD%E6%95%B0-14">1.5 函数</h2>
+<h2 id="15-%E5%87%BD%E6%95%B0-15">1.5 函数</h2>
 <ul>
 <li>python 传可变对象：<br />
 输出结果如下：</li>
@@ -4877,7 +4877,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-1">1.6 模块</h2>
 <p>Python 模块(Module)是一个 Python 文件，以 .py 结尾，封装了 Python 对象定义和Python语句。</p>
 <font size=4>
 <table>
@@ -4937,7 +4937,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-1">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-2">1.6 模块</h2>
 <ul>
 <li>模块定义：</li>
 </ul>
@@ -4956,7 +4956,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-2">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-3">1.6 模块</h2>
 <ul>
 <li>模块的引入<br />
 使用 import 语句来引入模块：</li>
@@ -5017,7 +5017,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-3">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-4">1.6 模块</h2>
 <ul>
 <li>模块的引入<br />
 使用 import 语句来引入模块：</li>
@@ -5057,7 +5057,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-4">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-5">1.6 模块</h2>
 <ul>
 <li>Python中的包</li>
 <li>Python中的包（Package）是一种用于组织和管理模块的层次结构。包定义了一个由模块及子包，和子包下的子包等组成的 Python 的应用环境。它们有助于将相关的模块组织到单个目录中，并提供一种有效的方式来管理大型项目的代码。</li>
@@ -5073,7 +5073,7 @@ changeme(mylist)
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-5">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-6">1.6 模块</h2>
 <ul>
 <li>Python中的包</li>
 <li>考虑一个在 package_runoob 目录下的 runoob1.py、runoob2.py、<code>__init__.py</code> 文件，test.py 为测试调用包的代码，目录结构如下：</li>
@@ -5094,7 +5094,7 @@ package_runoob
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-6">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-7">1.6 模块</h2>
 <font size=5>
 <p>包的源代码如下：<br />
 package_runoob/runoob1.py</p>
@@ -5123,7 +5123,7 @@ package_runoob/runoob1.py</p>
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-7">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-8">1.6 模块</h2>
 <font size=5>
 <p>在 package_runoob 同级目录下创建 test.py 来调用 package_runoob 包:</p>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入 Phone 包</span>
@@ -5149,7 +5149,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-8">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-9">1.6 模块</h2>
 <font size=4>
 <ul>
 <li>
@@ -5185,7 +5185,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="16-%E6%A8%A1%E5%9D%97-9">1.6 模块</h2>
+<h2 id="16-%E6%A8%A1%E5%9D%97-10">1.6 模块</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code>my_package/
     __init__.py
     my_module1.py
@@ -5205,7 +5205,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-1">1.7 文件I/O</h2>
 <ul>
 <li>打印到屏幕<br />
 最简单的输出方法是用print语句，你可以给它传递零个或多个用逗号隔开的表达式。此函数把你传递的表达式转换成一个字符串表达式，并将结果写到标准输出如下：</li>
@@ -5225,7 +5225,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-1">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-2">1.7 文件I/O</h2>
 <ul>
 <li>打印到屏幕</li>
 </ul>
@@ -5241,7 +5241,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-2">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-3">1.7 文件I/O</h2>
 <font size=4>
 <p>Python 2.x 和 Python 3.x 之间重要的区别:</p>
 <table>
@@ -5291,7 +5291,7 @@ I'm in runoob2
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-3">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-4">1.7 文件I/O</h2>
 <ul>
 <li>
 <p>读取键盘输入<br />
@@ -5315,7 +5315,7 @@ raw_input([prompt]) 函数从标准输入读取一个行，并返回一个字符
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-4">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-5">1.7 文件I/O</h2>
 <ol>
 <li>raw_input函数:<br />
 这将提示你输入任意字符串，然后在屏幕上显示相同的字符串。当我输入&quot;Hello Python！&quot;，输出如下：</li>
@@ -5333,7 +5333,7 @@ raw_input([prompt]) 函数从标准输入读取一个行，并返回一个字符
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-5">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-6">1.7 文件I/O</h2>
 <ol start="2">
 <li>input函数<br />
 input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 可以接收一个Python表达式作为输入，并将运算结果返回:</li>
@@ -5355,7 +5355,7 @@ input([prompt]) 函数和 raw_input([prompt]) 函数基本类似，但是 input 
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-6">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-7">1.7 文件I/O</h2>
 <ul>
 <li>
 <p>打开和关闭文件<br />
@@ -5378,7 +5378,7 @@ Python 提供了必要的函数和方法进行默认情况下的文件基本操�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-7">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-8">1.7 文件I/O</h2>
 <ul>
 <li>open 函数参数：</li>
 </ul>
@@ -5397,7 +5397,7 @@ Python 提供了必要的函数和方法进行默认情况下的文件基本操�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-8">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-9">1.7 文件I/O</h2>
 <ul>
 <li>open 函数参数 access_mode</li>
 </ul>
@@ -5435,7 +5435,7 @@ Python 提供了必要的函数和方法进行默认情况下的文件基本操�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-9">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-10">1.7 文件I/O</h2>
 <ul>
 <li>File对象的属性<br />
 一个文件被打开后得到一个file对象，以下是和file对象相关的所有属性的各种信息：</li>
@@ -5478,7 +5478,7 @@ Python 提供了必要的函数和方法进行默认情况下的文件基本操�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-10">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-11">1.7 文件I/O</h2>
 <ul>
 <li>File对象的属性</li>
 </ul>
@@ -5504,7 +5504,7 @@ Python 提供了必要的函数和方法进行默认情况下的文件基本操�
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-11">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-12">1.7 文件I/O</h2>
 <ol start="2">
 <li>close()方法<br />
 File 对象的 close（）方法刷新缓冲区里任何还没写入的信息，并关闭该文件，这之后便不能再进行写入。<br />
@@ -5520,7 +5520,7 @@ File 对象的 close（）方法刷新缓冲区里任何还没写入的信息，
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-12">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-13">1.7 文件I/O</h2>
 <pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 打开一个文件</span>
 fo = <span class="hljs-built_in">open</span>(<span class="hljs-string">&quot;foo.txt&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>)
 <span class="hljs-built_in">print</span> <span class="hljs-string">&quot;文件名: &quot;</span>, fo.name
@@ -5541,7 +5541,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-13">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-14">1.7 文件I/O</h2>
 <ol start="3">
 <li>write()方法<br />
 write()方法可将任何字符串写入一个打开的文件。write()方法不会在字符串的结尾添加换行符('\n')。</li>
@@ -5564,7 +5564,7 @@ Very good site!
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="17-%E6%96%87%E4%BB%B6io-14">1.7 文件I/O</h2>
+<h2 id="17-%E6%96%87%E4%BB%B6io-15">1.7 文件I/O</h2>
 <ol start="3">
 <li>read()方法</li>
 </ol>
@@ -5598,7 +5598,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-1">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <p>Python 是一种支持面向对象编程（OOP）的编程语言，具有以下面向对象特性：</p>
 <p><strong>类与对象</strong>：在 Python 中，一切皆为对象，包括整数、字符串、函数等。对象是类的实例，类是对象的模板。通过类定义，可以创建多个对象。</p>
@@ -5620,7 +5620,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-1">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-2">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <table>
 <thead>
@@ -5669,7 +5669,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-2">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-3">1.8 面向对象编程（OOP）</h2>
 <p>面向对象编程（OOP）的Python实现</p>
 <font size=4>
 <p>在Python中，定义类（Class）是一种方式来创建自定义数据类型，以包含属性（成员变量）和方法（成员函数）。以下是Python中定义类的具体规则和方法：</p>
@@ -5698,7 +5698,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-3">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-4">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <ol start="3">
 <li><strong>成员变量</strong>：在类中，可以定义成员变量（属性）来存储对象的数据。成员变量通常以self关键字开头。</li>
@@ -5730,7 +5730,7 @@ fo.close()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-4">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-5">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <ol start="5">
 <li><strong>创建对象</strong>：要使用类创建对象，只需调用类的构造函数，并传递必要的参数。</li>
@@ -5763,7 +5763,7 @@ obj.some_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-5">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-6">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <p>C++和Python在访友问私有成员和函数时的区别</p>
 <p><img src="../figs/fig1.32a-1.jpg" alt="" style="width:450px;" />   <img src="../figs/fig1.32b-1.jpg" alt="" style="width:250px;" /></p>
@@ -5778,7 +5778,7 @@ obj.some_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-6">1.8 面向对象编程（OOP）</h2>
+<h2 id="18-%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1%E7%BC%96%E7%A8%8Boop-7">1.8 面向对象编程（OOP）</h2>
 <font size=4>
 <p>C++和Python在访友问私有成员和函数时的区别</p>
 <table>
@@ -5819,7 +5819,7 @@ obj.some_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="19-%E6%96%B9%E6%B3%95">1.9 方法</h2>
+<h2 id="19-%E6%96%B9%E6%B3%95-1">1.9 方法</h2>
 <font size=5>
 <p>在Python中，方法（Method）是与<strong>类</strong>或<strong>对象</strong>相关联的函数。方法用于实现类的行为和操作，可以访问类的属性、修改属性的值，以及执行特定的操作。Python中的方法通常包括一个特殊的参数 self，该参数表示调用该方法的对象本身。<strong>方法</strong>有两种主要类型：</p>
 <ol>
@@ -5847,7 +5847,7 @@ obj.instance_method(<span class="hljs-string">&quot;Hello&quot;</span>, <span cl
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="19-%E6%96%B9%E6%B3%95-1">1.9 方法</h2>
+<h2 id="19-%E6%96%B9%E6%B3%95-2">1.9 方法</h2>
 <font size=5>
 <ol start="2">
 <li><strong>类方法（Class Method）</strong>：在Python中，类方法（Class Method）是与类关联的方法，而不是与类的实例（对象）关联的方法。类方法通常用@classmethod装饰器进行定义，它的第一个参数通常是cls，代表类本身。与普通方法不同，类方法可以在没有类的实例的情况下调用，且它们可以访问和修改类级别的属性。</li>
@@ -5877,7 +5877,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="19-%E6%96%B9%E6%B3%95-2">1.9 方法</h2>
+<h2 id="19-%E6%96%B9%E6%B3%95-3">1.9 方法</h2>
 <font size=6>
 <ul>
 <li>
@@ -5905,7 +5905,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="19-%E6%96%B9%E6%B3%95-3">1.9 方法</h2>
+<h2 id="19-%E6%96%B9%E6%B3%95-4">1.9 方法</h2>
 <font size=5>
 <p>在Python中，方法（Method）和函数（Function）是两个不同的概念</p>
 <table>
@@ -5950,7 +5950,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98">1.10 动态分配内存</h2>
+<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-1">1.10 动态分配内存</h2>
 <font size=5>
 <p>Python中的动态内存分配是通过内置的内存管理机制实现的，这包括垃圾回收和自动内存分配。Python的动态内存分配机制是一种自动化的、安全的方式来处理内存管理，程序员无需过多担心手动内存分配或释放，因为这些任务由Python的内存管理系统处理。Python中的动态内存分配的特点：</p>
 <p><strong>垃圾回收</strong>：Python使用垃圾回收器来自动管理内存。当对象不再被引用时，垃圾回收器会自动回收其内存以供其他用途。这减少了内存泄漏的风险。</p>
@@ -5966,7 +5966,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-1">1.10 动态分配内存</h2>
+<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-2">1.10 动态分配内存</h2>
 <font size=5>
 <p><strong>循环引用</strong>：Python垃圾回收器还能够处理循环引用，即两个或多个对象相互引用。在这种情况下，垃圾回收器会检测到它们之间的循环引用并及时释放内存。</p>
 <p><strong>自动内存分配</strong>：Python自动管理内存的过程使程序员不需要手动分配或释放内存。这降低了程序中内存相关错误的可能性。</p>
@@ -5982,7 +5982,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-2">1.10 动态分配内存</h2>
+<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-3">1.10 动态分配内存</h2>
 <font size=5>
 <p>Python和c语言在动态分配内存上的区别:</p>
 <p><strong>内存管理方式</strong>:</p>
@@ -5999,7 +5999,7 @@ MyClass.class_method()
 }
 ;" data-marpit-pagination-total="230" data-size="4:3">
 <header>第一章：Python语言基础</header>
-<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-3">1.10 动态分配内存</h2>
+<h2 id="110-%E5%8A%A8%E6%80%81%E5%88%86%E9%85%8D%E5%86%85%E5%AD%98-4">1.10 动态分配内存</h2>
 <font size=5>
 <p><strong>类型系统</strong>:</p>
 <p><em>Python</em>：Python是一门动态类型语言，变量的类型在运行时确定。这允许更大的灵活性，但也可能导致运行时类型错误。</p>
