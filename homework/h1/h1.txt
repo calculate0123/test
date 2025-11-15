@@ -1,0 +1,45 @@
+作业：用 openpyxl 自动生成“销售报表.xlsx”
+
+1. 数据
+
+sales.csv，包含列：Date, Region, Salesperson, Product, Units, UnitPrice。Revenue 列请在 Excel 里用公式计算（不要在 Python 里先算）。
+
+2. 目标
+
+编写 report.py，运行后生成 销售报表.xlsx，包含 3 个工作表：
+
+2.1 Raw
+
+把 sales.csv 写入；首行加加粗居中样式并设合适的数字/日期格式。
+
+冻结首行，方便滚动查看。提示：设置 ws.freeze_panes = "A2" 即可。
+
+
+2.2 Summary
+
+在 B1 放一个下拉菜单选择 Region（下拉内容来自 Raw!B2:B…），并在 A1 做“地区：”。
+
+
+用公式而不是 Python 计算：
+
+B3 总销售额：=SUMIFS(Raw!G:G, Raw!B:B, B1)（其中 G 列是 Revenue）。
+
+B4 平均客单价：例如 =AVERAGEIFS(Raw!G:G, Raw!B:B, B1) 或按你定义。
+通过 openpyxl 把这些公式写进单元格（注意：openpyxl 不会计算公式，打开 Excel 会自动重算）。
+
+
+条件格式：把 Raw 中 Units 或 Revenue 的 Top 10 在 Summary 里高亮一个“Top10 列表”，或直接在 Summary 给关键指标加色阶/图标集。
+
+
+2.3 Charts
+
+生成一个柱状或折线图，展示各 Product 在所选 Region 的 Revenue。图表的数据区域来自 Summary，并设置标题、轴标题。
+
+
+3. 交付物
+
+3.1 report.py。
+
+3.2 生成的 销售报表.xlsx。
+
+3.3 一张截图展示 Charts 页效果。
