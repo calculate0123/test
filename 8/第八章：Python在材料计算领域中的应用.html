@@ -1,0 +1,903 @@
+<!DOCTYPE html><html lang="en-US"><head><title>第七章：Python在材料计算领域中的应用</title><meta property="og:title" content="第七章：Python在材料计算领域中的应用"><meta name="author" content="Shiyan Pan"><meta property="article:author" content="Shiyan Pan"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,height=device-height,initial-scale=1.0"><meta name="apple-mobile-web-app-capable" content="yes"><meta http-equiv="X-UA-Compatible" content="ie=edge"><meta property="og:type" content="website"><meta name="twitter:card" content="summary"><style>@media screen{body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{appearance:none;background-color:initial;border:0;color:inherit;cursor:pointer;font-size:inherit;opacity:.8;outline:none;padding:0;transition:opacity .2s linear;-webkit-tap-highlight-color:transparent}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:disabled,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:disabled{cursor:not-allowed;opacity:.15!important}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover{opacity:1}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:active,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:active{opacity:.6}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button:hover:not(:disabled),body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button:hover:not(:disabled){transition:none}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-prev{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNNjggOTAgMjggNTBsNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button.bespoke-marp-presenter-info-page-next{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJtMzIgOTAgNDAtNDAtNDAtNDAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNNDAgNzBIMjBWNTBtMjAgMEwyMCA3MG00MC00MGgyMHYyMG0tMjAgMCAyMC0yMCIgY2xhc3M9ImEiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button.exit[data-bespoke-marp-osc=fullscreen]{background-image:url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48ZGVmcz48c3R5bGU+LmF7ZmlsbDpub25lO3N0cm9rZTojZmZmO3N0cm9rZS1saW5lY2FwOnJvdW5kO3N0cm9rZS1saW5lam9pbjpyb3VuZDtzdHJva2Utd2lkdGg6NXB4fTwvc3R5bGU+PC9kZWZzPjxyZWN0IHdpZHRoPSI4MCIgaGVpZ2h0PSI2MCIgeD0iMTAiIHk9IjIwIiBjbGFzcz0iYSIgcng9IjUuNjciLz48cGF0aCBkPSJNMjAgNTBoMjB2MjBtLTIwIDAgMjAtMjBtNDAgMEg2MFYzMG0yMCAwTDYwIDUwIiBjbGFzcz0iYSIvPjwvc3ZnPg==")}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter]{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNODcuOCA0Ny41Qzg5IDUwIDg3LjcgNTIgODUgNTJIMzVhOC43IDguNyAwIDAgMS03LjItNC41bC0xNS42LTMxQzExIDE0IDEyLjIgMTIgMTUgMTJoNTBhOC44IDguOCAwIDAgMSA3LjIgNC41ek02MCA1MnYzNm0tMTAgMGgyME00NSA0MmgyMCIvPjwvc3ZnPg==") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-bigger{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODBNNTIgOTBWMTAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button.bespoke-marp-presenter-note-smaller{background:#0000 url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSI1IiBkPSJNMTIgNTBoODAiLz48L3N2Zz4=") no-repeat 50%;background-size:contain;overflow:hidden;text-indent:100%;white-space:nowrap}}@keyframes __bespoke_marp_transition_reduced_outgoing__{0%{opacity:1}to{opacity:0}}@keyframes __bespoke_marp_transition_reduced_incoming__{0%{mix-blend-mode:plus-lighter;opacity:0}to{mix-blend-mode:plus-lighter;opacity:1}}.bespoke-marp-note,.bespoke-marp-osc,.bespoke-progress-parent{display:none;transition:none}@media screen{::view-transition-group(*){animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-timing-function:ease}::view-transition-new(*),::view-transition-old(*){animation-delay:0s;animation-direction:var(--marp-bespoke-transition-animation-direction,normal);animation-duration:var(--marp-bespoke-transition-animation-duration,.5s);animation-fill-mode:both;animation-name:var(--marp-bespoke-transition-animation-name,var(--marp-bespoke-transition-animation-name-fallback,__bespoke_marp_transition_no_animation__));mix-blend-mode:normal}::view-transition-old(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_outgoing__;animation-timing-function:ease}::view-transition-new(*){--marp-bespoke-transition-animation-name-fallback:__bespoke_marp_transition_reduced_incoming__;animation-timing-function:ease}::view-transition-new(root),::view-transition-old(root){animation-timing-function:linear}::view-transition-new(__bespoke_marp_transition_osc__),::view-transition-old(__bespoke_marp_transition_osc__){animation-duration:0s!important;animation-name:__bespoke_marp_transition_osc__!important}::view-transition-new(__bespoke_marp_transition_osc__){opacity:0!important}.bespoke-marp-transition-warming-up::view-transition-group(*),.bespoke-marp-transition-warming-up::view-transition-new(*),.bespoke-marp-transition-warming-up::view-transition-old(*){animation-play-state:paused!important}body,html{height:100%;margin:0}body{background:#000;overflow:hidden}svg.bespoke-marp-slide{content-visibility:hidden;opacity:0;pointer-events:none;z-index:-1}svg.bespoke-marp-slide:not(.bespoke-marp-active) *{view-transition-name:none!important}svg.bespoke-marp-slide.bespoke-marp-active{content-visibility:visible;opacity:1;pointer-events:auto;z-index:0}svg.bespoke-marp-slide.bespoke-marp-active.bespoke-marp-active-ready *{animation-name:__bespoke_marp__!important}@supports not (content-visibility:hidden){svg.bespoke-marp-slide[data-bespoke-marp-load=hideable]{display:none}svg.bespoke-marp-slide[data-bespoke-marp-load=hideable].bespoke-marp-active{display:block}}}@media screen and (prefers-reduced-motion:reduce){svg.bespoke-marp-slide *{view-transition-name:none!important}}@media screen{[data-bespoke-marp-fragment=inactive]{visibility:hidden}body[data-bespoke-view=""] .bespoke-marp-parent,body[data-bespoke-view=next] .bespoke-marp-parent{inset:0;position:absolute}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc{background:#000000a6;border-radius:7px;bottom:50px;color:#fff;contain:paint;display:block;font-family:Helvetica,Arial,sans-serif;font-size:16px;left:50%;line-height:0;opacity:1;padding:12px;position:absolute;touch-action:manipulation;transform:translateX(-50%);transition:opacity .2s linear;-webkit-user-select:none;user-select:none;white-space:nowrap;will-change:transform;z-index:1;view-transition-name:__bespoke_marp_transition_osc__}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>*,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>*{margin-left:6px}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>:first-child,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>:first-child{margin-left:0}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span,body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span{opacity:.8}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>span[data-bespoke-marp-osc=page]{display:inline-block;min-width:140px;text-align:center}body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=""] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=fullscreen],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=next],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=presenter],body[data-bespoke-view=next] .bespoke-marp-parent>.bespoke-marp-osc>button[data-bespoke-marp-osc=prev]{height:32px;line-height:32px;width:32px}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive{cursor:none}body[data-bespoke-view=""] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc,body[data-bespoke-view=next] .bespoke-marp-parent.bespoke-marp-inactive>.bespoke-marp-osc{opacity:0;pointer-events:none}body[data-bespoke-view=""] svg.bespoke-marp-slide,body[data-bespoke-view=next] svg.bespoke-marp-slide{height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent{background:#222;display:flex;height:5px;width:100%}body[data-bespoke-view=""] .bespoke-progress-parent+.bespoke-marp-parent{top:5px}body[data-bespoke-view=""] .bespoke-progress-parent .bespoke-progress-bar{background:#0288d1;flex:0 0 0;transition:flex-basis .2s cubic-bezier(0,1,1,1)}body[data-bespoke-view=next]{background:#0000}body[data-bespoke-view=presenter]{background:#161616}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container{display:grid;font-family:Helvetica,Arial,sans-serif;grid-template:"current dragbar next" minmax(140px,1fr) "current dragbar note" 2fr "info    dragbar note" 3em;grid-template-columns:minmax(3px,var(--bespoke-marp-presenter-split-ratio,66%)) 0 minmax(3px,1fr);height:100%;left:0;position:absolute;top:0;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent{grid-area:current;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide{height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-parent svg.bespoke-marp-slide.bespoke-marp-active{filter:drop-shadow(0 3px 10px rgba(0,0,0,.5))}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container{background:#0288d1;cursor:col-resize;grid-area:dragbar;margin-left:-3px;opacity:0;position:relative;transition:opacity .4s linear .1s;width:6px;z-index:10}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container:hover{opacity:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-dragbar-container.active{opacity:1;transition-delay:0s}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container{background:#222;cursor:pointer;display:none;grid-area:next;overflow:hidden;position:relative}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-next-container iframe.bespoke-marp-presenter-next{background:#0000;border:0;display:block;filter:drop-shadow(0 3px 10px rgba(0,0,0,.5));height:calc(100% - 40px);left:20px;pointer-events:none;position:absolute;top:20px;-webkit-user-select:none;user-select:none;width:calc(100% - 40px)}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container{background:#222;color:#eee;grid-area:note;position:relative;z-index:1}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper{display:block;inset:0;position:absolute}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons{background:#000000a6;border-radius:4px;bottom:0;display:flex;gap:4px;margin:12px;opacity:0;padding:6px;pointer-events:none;position:absolute;right:0;transition:opacity .2s linear}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-buttons:focus-within,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-presenter-note-wrapper:focus-within+.bespoke-marp-presenter-note-buttons,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container:hover .bespoke-marp-presenter-note-buttons{opacity:1;pointer-events:auto}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note{box-sizing:border-box;font-size:calc(1.1em*var(--bespoke-marp-note-font-scale, 1));height:calc(100% - 40px);margin:20px;overflow:auto;padding-right:3px;white-space:pre-wrap;width:calc(100% - 40px);word-wrap:break-word;scrollbar-color:#eeeeee80 #0000;scrollbar-width:thin}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar{width:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-track{background:#0000}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note::-webkit-scrollbar-thumb{background:#eeeeee80;border-radius:6px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note:empty{pointer-events:none}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note.active{display:block}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:first-child{margin-top:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-note-container .bespoke-marp-note p:last-child{margin-bottom:0}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container{align-items:center;box-sizing:border-box;color:#eee;display:flex;flex-wrap:nowrap;grid-area:info;justify-content:center;overflow:hidden;padding:0 10px}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time,body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{box-sizing:border-box;display:block;padding:0 10px;white-space:nowrap;width:100%}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container button{height:1.5em;line-height:1.5em;width:1.5em}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page{order:2;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-page .bespoke-marp-presenter-info-page-text{display:inline-block;min-width:120px;text-align:center}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-time{color:#999;order:1;text-align:left}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer{color:#999;order:3;text-align:right}body[data-bespoke-view=presenter] .bespoke-marp-presenter-container .bespoke-marp-presenter-info-container .bespoke-marp-presenter-info-timer:hover{cursor:pointer}}@media print{.bespoke-marp-presenter-info-container,.bespoke-marp-presenter-next-container,.bespoke-marp-presenter-note-container{display:none}}</style><style>@charset "UTF-8";@import "https://fonts.bunny.net/css?family=Lato:400,900|Roboto+Mono:400,700&display=swap";div#\:\$p > svg > foreignObject > section{width:1280px;height:720px;box-sizing:border-box;overflow:hidden;position:relative;scroll-snap-align:center center;-webkit-text-size-adjust:100%;text-size-adjust:100%}div#\:\$p > svg > foreignObject > section::after{bottom:0;content:attr(data-marpit-pagination);padding:inherit;pointer-events:none;position:absolute;right:0}div#\:\$p > svg > foreignObject > section:not([data-marpit-pagination])::after{display:none}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:2em;margin-block:0.67em}div#\:\$p > svg > foreignObject > section video::-webkit-media-controls{will-change:transform}@page {size:960px 720px;margin:0}@media print{html, body{background-color:#fff;margin:0;page-break-inside:avoid;break-inside:avoid-page}div#\:\$p > svg > foreignObject > section{page-break-before:always;break-before:page}div#\:\$p > svg > foreignObject > section, div#\:\$p > svg > foreignObject > section *{-webkit-print-color-adjust:exact!important;animation-delay:0s!important;animation-duration:0s!important;color-adjust:exact!important;print-color-adjust:exact!important;transition:none!important}div#\:\$p > svg[data-marpit-svg]{display:block;height:100vh;width:100vw}}div#\:\$p > svg > foreignObject > :where(section){container-type:size}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"]{direction:ltr}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg{overflow:visible;min-height:1px;min-width:1px}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] > svg a{fill:blue;stroke:blue}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"]{display:block;text-align:center;margin:1em 0}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][display="true"][width="full"]{display:flex}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="left"]{text-align:left}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"][justify="right"]{text-align:right}div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > g{fill:red;stroke:red}div#\:\$p > svg > foreignObject > section g[data-mml-node="merror"] > rect[data-background]{fill:yellow;stroke:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > line[data-line], div#\:\$p > svg > foreignObject > section svg[data-table] > g > line[data-line]{stroke-width:70px;fill:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > rect[data-frame], div#\:\$p > svg > foreignObject > section svg[data-table] > g > rect[data-frame]{stroke-width:70px;fill:none}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dashed, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dashed{stroke-dasharray:140}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > .mjx-dotted, div#\:\$p > svg > foreignObject > section svg[data-table] > g > .mjx-dotted{stroke-linecap:round;stroke-dasharray:0,140}div#\:\$p > svg > foreignObject > section g[data-mml-node="mtable"] > g > svg{overflow:visible}div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool{display:inline-block;position:relative;width:0;height:0}div#\:\$p > svg > foreignObject > section [jax="SVG"] mjx-tool > mjx-tip{position:absolute;top:0;left:0}div#\:\$p > svg > foreignObject > section mjx-tool > mjx-tip{display:inline-block;padding:.2em;border:1px solid #888;font-size:70%;background-color:#F8F8F8;color:black;box-shadow:2px 2px 5px #AAAAAA}div#\:\$p > svg > foreignObject > section g[data-mml-node="maction"][data-toggle]{cursor:pointer}div#\:\$p > svg > foreignObject > section mjx-status{display:block;position:fixed;left:1em;bottom:1em;min-width:25%;padding:.2em .4em;border:1px solid #888;font-size:90%;background-color:#F8F8F8;color:black}div#\:\$p > svg > foreignObject > section foreignObject[data-mjx-xml]{font-family:initial;line-height:normal;overflow:visible}div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] path[data-c], div#\:\$p > svg > foreignObject > section mjx-container[jax="SVG"] use[data-c]{stroke-width:3}@media print{div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] path[data-c],div#\:\$p > svg > foreignObject > section mjx-container[jax=SVG] use[data-c]{stroke-width:0}}div#\:\$p > svg > foreignObject > section img[data-marp-twemoji]{background:transparent;height:1em;margin:0 .05em 0 .1em;vertical-align:-.1em;width:1em}/*!
+ * Marp / Marpit Gaia theme.
+ *
+ * @theme gaia
+ * @author Yuki Hattori
+ *
+ * @auto-scaling true
+ * @size 16:9 1280px 720px
+ * @size 4:3 960px 720px
+ */div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code.hljs{display:block;overflow-x:auto;padding:1em}div#\:\$p > svg > foreignObject > section code.hljs{padding:3px 5px}div#\:\$p > svg > foreignObject > section .hljs{background:#000;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-comment,div#\:\$p > svg > foreignObject > section .hljs-quote{color:#aeaeae;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-keyword,div#\:\$p > svg > foreignObject > section .hljs-selector-tag,div#\:\$p > svg > foreignObject > section .hljs-type{color:#e28964}div#\:\$p > svg > foreignObject > section .hljs-string{color:#65b042}div#\:\$p > svg > foreignObject > section .hljs-subst{color:#daefa3}div#\:\$p > svg > foreignObject > section .hljs-link,div#\:\$p > svg > foreignObject > section .hljs-regexp{color:#e9c062}div#\:\$p > svg > foreignObject > section .hljs-name,div#\:\$p > svg > foreignObject > section .hljs-section,div#\:\$p > svg > foreignObject > section .hljs-tag,div#\:\$p > svg > foreignObject > section .hljs-title{color:#89bdff}div#\:\$p > svg > foreignObject > section .hljs-class .hljs-title,div#\:\$p > svg > foreignObject > section .hljs-doctag,div#\:\$p > svg > foreignObject > section .hljs-title.class_{text-decoration:underline}div#\:\$p > svg > foreignObject > section .hljs-bullet,div#\:\$p > svg > foreignObject > section .hljs-number,div#\:\$p > svg > foreignObject > section .hljs-symbol{color:#3387cc}div#\:\$p > svg > foreignObject > section .hljs-params,div#\:\$p > svg > foreignObject > section .hljs-template-variable,div#\:\$p > svg > foreignObject > section .hljs-variable{color:#3e87e3}div#\:\$p > svg > foreignObject > section .hljs-attribute{color:#cda869}div#\:\$p > svg > foreignObject > section .hljs-meta{color:#8996a8}div#\:\$p > svg > foreignObject > section .hljs-formula{background-color:#0e2231;color:#f8f8f8;font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-addition{background-color:#253b22;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-deletion{background-color:#420e09;color:#f8f8f8}div#\:\$p > svg > foreignObject > section .hljs-selector-class{color:#9b703f}div#\:\$p > svg > foreignObject > section .hljs-selector-id{color:#8b98ab}div#\:\$p > svg > foreignObject > section .hljs-emphasis{font-style:italic}div#\:\$p > svg > foreignObject > section .hljs-strong{font-weight:700}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){margin:.5em 0 0}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{font-weight:inherit}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h2, marp-h2)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h3, marp-h3)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h4, marp-h4)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h5, marp-h5)::part(auto-scaling),div#\:\$p > svg > foreignObject > section :is(h6, marp-h6)::part(auto-scaling){max-height:580px}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1){font-size:1.8em}div#\:\$p > svg > foreignObject > section :is(h2, marp-h2){font-size:1.5em}div#\:\$p > svg > foreignObject > section :is(h3, marp-h3){font-size:1.3em}div#\:\$p > svg > foreignObject > section :is(h4, marp-h4){font-size:1.1em}div#\:\$p > svg > foreignObject > section :is(h5, marp-h5){font-size:1em}div#\:\$p > svg > foreignObject > section :is(h6, marp-h6){font-size:.9em}div#\:\$p > svg > foreignObject > section blockquote,div#\:\$p > svg > foreignObject > section p{margin:1em 0 0}div#\:\$p > svg > foreignObject > section ol>li,div#\:\$p > svg > foreignObject > section ul>li{margin:.3em 0 0}div#\:\$p > svg > foreignObject > section ol>li>p,div#\:\$p > svg > foreignObject > section ul>li>p{margin:.6em 0 0}div#\:\$p > svg > foreignObject > section code{display:inline-block;font-family:Roboto Mono,monospace;font-size:.8em;letter-spacing:0;margin:-.1em .15em;padding:.1em .2em;vertical-align:baseline}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){display:block;margin:1em 0 0;overflow:visible}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre) code{box-sizing:border-box;font-size:.7em;margin:0;min-width:100%;padding:.5em}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)::part(auto-scaling){max-height:calc(580px - 1em)}div#\:\$p > svg > foreignObject > section blockquote{margin:1em 0 0;padding:0 1em;position:relative}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before{content:"“";display:block;font-family:Times New Roman,serif;font-weight:700;position:absolute}div#\:\$p > svg > foreignObject > section blockquote:before{left:0;top:0}div#\:\$p > svg > foreignObject > section blockquote:after{bottom:0;right:0;transform:rotate(180deg)}div#\:\$p > svg > foreignObject > section blockquote>:first-child{margin-top:0}div#\:\$p > svg > foreignObject > section mark{background:transparent}div#\:\$p > svg > foreignObject > section table{border-collapse:collapse;border-spacing:0;margin:1em 0 0}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-style:solid;border-width:1px;padding:.2em .4em}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section:after{box-sizing:border-box;font-size:66%;height:70px;line-height:50px;overflow:hidden;padding:10px 25px;position:absolute}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:66%;}div#\:\$p > svg > foreignObject > section header{top:0}div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header{left:0;right:0}div#\:\$p > svg > foreignObject > section footer{bottom:0}div#\:\$p > svg > foreignObject > section{background-color:var(--color-background);background-image:linear-gradient(135deg, hsla(0,0%,53%,0), hsla(0,0%,53%,.02) 50%, hsla(0,0%,100%,0) 0, hsla(0,0%,100%,.05));color:var(--color-foreground);font-family:Lato,Avenir Next,Avenir,Trebuchet MS,Segoe UI,sans-serif;font-size:35px;height:720px;letter-spacing:1.25px;line-height:1.35;padding:70px;width:1280px;word-wrap:break-word;--color-background:#fff8e1;--color-background-stripe:rgba(69,90,100,.1);--color-foreground:#455a64;--color-dimmed:#6a7a7d;--color-highlight:#0288d1;}div#\:\$p > svg > foreignObject > section{--marpit-root-font-size:35px;}div#\:\$p > svg > foreignObject > section:after{bottom:0;font-size:80%;right:0}div#\:\$p > svg > foreignObject > section:after{--marpit-root-font-size:80%;}div#\:\$p > svg > foreignObject > section a,div#\:\$p > svg > foreignObject > section mark{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section code{background:var(--color-dimmed);color:var(--color-background)}div#\:\$p > svg > foreignObject > section :is(h1, marp-h1) strong,div#\:\$p > svg > foreignObject > section :is(h2, marp-h2) strong,div#\:\$p > svg > foreignObject > section :is(h3, marp-h3) strong,div#\:\$p > svg > foreignObject > section :is(h4, marp-h4) strong,div#\:\$p > svg > foreignObject > section :is(h5, marp-h5) strong,div#\:\$p > svg > foreignObject > section :is(h6, marp-h6) strong{color:var(--color-highlight)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre){background:var(--color-foreground)}div#\:\$p > svg > foreignObject > section :is(pre, marp-pre)>code{background:transparent}div#\:\$p > svg > foreignObject > section blockquote:after,div#\:\$p > svg > foreignObject > section blockquote:before,div#\:\$p > svg > foreignObject > section footer,div#\:\$p > svg > foreignObject > section header,div#\:\$p > svg > foreignObject > section section:after{color:var(--color-dimmed)}div#\:\$p > svg > foreignObject > section table td,div#\:\$p > svg > foreignObject > section table th{border-color:var(--color-foreground)}div#\:\$p > svg > foreignObject > section table thead th{background:var(--color-foreground);color:var(--color-background)}div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) td,div#\:\$p > svg > foreignObject > section table tbody>tr:nth-child(odd) th{background:var(--color-background-stripe, transparent)}div#\:\$p > svg > foreignObject > section>:first-child,div#\:\$p > svg > foreignObject > section>header:first-child+*{margin-top:0}div#\:\$p > svg > foreignObject > section:where(.invert){--color-background:#455a64;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#dad8c8;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.gaia){--color-background:#0288d1;--color-background-stripe:rgba(255,248,225,.1);--color-foreground:#fff8e1;--color-dimmed:#cce2de;--color-highlight:#81d4fa;}div#\:\$p > svg > foreignObject > section:where(.lead){align-items:stretch;flex-flow:column nowrap;place-content:safe center center}div#\:\$p > svg > foreignObject > section:where(.lead) :is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) :is(h6, marp-h6){text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) p{text-align:center}div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h1, marp-h1),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h2, marp-h2),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h3, marp-h3),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h4, marp-h4),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h5, marp-h5),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>:is(h6, marp-h6),div#\:\$p > svg > foreignObject > section:where(.lead) blockquote>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) ol>li>p,div#\:\$p > svg > foreignObject > section:where(.lead) ul>li>p{text-align:left}div#\:\$p > svg > foreignObject > section:where(.lead) table{margin-left:auto;margin-right:auto}div#\:\$p > svg > foreignObject > section{width:960px;height:720px}div#\:\$p > svg > foreignObject > section a{font-size:100px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]{columns:initial!important;display:block!important;padding:0!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"]::after, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::before, div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"]::after{display:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container]{all:initial;display:flex;flex-direction:row;height:100%;overflow:hidden;width:100%}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container][data-marpit-advanced-background-direction="vertical"]{flex-direction:column}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split] > div[data-marpit-advanced-background-container]{width:var(--marpit-advanced-background-split, 50%)}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"][data-marpit-advanced-background-split="right"] > div[data-marpit-advanced-background-container]{margin-left:calc(100% - var(--marpit-advanced-background-split, 50%))}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure{all:initial;background-position:center;background-repeat:no-repeat;background-size:cover;flex:auto;margin:0}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="background"] > div[data-marpit-advanced-background-container] > figure > figcaption{position:absolute;border:0;clip:rect(0, 0, 0, 0);height:1px;margin:-1px;overflow:hidden;padding:0;white-space:nowrap;width:1px}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="content"], div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"]{background:transparent!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background="pseudo"], div#\:\$p > svg[data-marpit-svg] > foreignObject[data-marpit-advanced-background="pseudo"]{pointer-events:none!important}div#\:\$p > svg > foreignObject > section[data-marpit-advanced-background-split]{width:100%;height:100%}
+</style></head><body><div class="bespoke-marp-osc"><button data-bespoke-marp-osc="prev" tabindex="-1" title="Previous slide">Previous slide</button><span data-bespoke-marp-osc="page"></span><button data-bespoke-marp-osc="next" tabindex="-1" title="Next slide">Next slide</button><button data-bespoke-marp-osc="fullscreen" tabindex="-1" title="Toggle fullscreen (f)">Toggle fullscreen</button><button data-bespoke-marp-osc="presenter" tabindex="-1" title="Open presenter view (p)">Open presenter view</button></div><div id=":$p"><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="1" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="1" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+
+<h1 id="%E7%AC%AC%E4%B8%83%E7%AB%A0python%E5%9C%A8%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E9%A2%86%E5%9F%9F%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8">第七章：Python在材料计算领域中的应用</h1>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B">8.1 材料计算简介</h2>
+<h2 id="82-%E2%96%B3%E2%98%85%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E5%B7%A5%E5%85%B7">8.2 △★计算方法和工具</h2>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="2" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="2" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-1">8.1 材料计算简介</h2>
+<font size=6>
+<p>材料计算是一个跨学科领域，涉及多种科学和工程领域，旨在理解、设计和优化材料的性质、结构和性能。</p>
+<p>全球工业革命浪潮催生了材料研发的加速，各国追求低成本、高可靠性的预测方法以快速获得定制性能的新材料。</p>
+<p>随着<code>大数据</code>时代的兴起，材料信息学领域，包括<code>机器学习</code>等人工智能技术，迅速发展为材料设计与开发的有力工具，并广泛应用于材料研究。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="3" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="3" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-2">8.1 材料计算简介</h2>
+<p>材料科学设计原理<br />
+<font size=5></p>
+<ol>
+<li>机器学习技术（包含神经网络和遗传算法）己经被证明可以有效地加速材料的研发进程。人工智能算法分为通用的<code>Scikit-learn</code>、<code>TensorFlow</code>和<code>Pytorch</code>等人工智能框架，以及针对材料性能开发的专用算法，如SISSO、AFLOW-ML、MatMiner等，这些算法有助于预测和优化材料性能。</li>
+</ol>
+<p><img src="../figs/9.png" alt="" style="width:400px;" /> <img src="../figs/14.JPG" alt="" style="width:400px;" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="4" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="4" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-3">8.1 材料计算简介</h2>
+<font size=5>
+<ol start="2">
+<li>在材料科学研究中，建立准确的机器学习模型往往需要“海量”数据进行训练。近年来，美国、欧洲和日本等国的科研人员陆续开发了一系列高效的计算软件、材料数据库和材料人工智能算法。这些计算软件包括Materials Project、AFLOWπ、AiiDA、ASE等，用于材料计算和分析。材料数据库包括ICSD、COD、Materials Project、AFLOW-Lib、Materials Cloud、OQMD、Materials Web、NOMAD、以及日本国立材料科学研究所(NIMS)的数据库和MatNavi检索系统，这些数据库包含了大量的材料信息。主要<code>材料科学数据库</code>:</li>
+</ol>
+<p><img src="../figs/10.JPG" alt="Alt text" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="5" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="5" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-4">8.1 材料计算简介</h2>
+<font size=5>
+<p>以下是材料计算(<code>材料数据库</code>)涉及的主要内容：</p>
+<ol>
+<li>
+<p><code>电子结构计算</code>：这是材料计算的核心，包括使用量子力学方法（如密度泛函理论）来模拟材料中的电子结构。这可用于预测材料的能带结构、电子密度分布和电子态密度等属性。</p>
+<p>第一性原理计算软件: VASP、Quantum Espresso、Abinit。</p>
+</li>
+<li>
+<p><code>原子和分子动力学模拟</code>：通过模拟原子和分子之间的相互作用以及它们在时间上的演化，可以研究材料的结构、热力学性质和响应。</p>
+<p>分子动力学计算软件: LAMMPS。</p>
+</li>
+<li>
+<p><code>相图计算</code>，CALPHAD (Computer Coupling of Phase Diagrams and Thermochemistry)：相图计算涉及研究材料在不同条件下的相变行为，例如温度、压力和成分变化。这可用于预测材料的相图、固溶度、相平衡和相变温度等。</p>
+<p>相图相场计算软件: OpenPhase、OpenCalphd、Thermocalc、Pandat.</p>
+</li>
+</ol>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="6" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="6" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-5">8.1 材料计算简介</h2>
+<font size=6>
+<p>Materials Project (MP)计算材料数据库平台(<code>https://www.materialsproject.org/</code>), 是由美国劳伦斯伯克利国家实验室(LBNL)和麻省理工学院(MIT)等单位在2011年材料基因组计划提出后联合开发的开放性数据库。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="7" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/11.JPG&quot;);background-size:400px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="7" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="7" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-6">8.1 材料计算简介</h2>
+<font size=6>
+<p>Materials Project数据库存储了几十万条包括能带结构、弹性张量、压电张量等性能的<code>第一性原理计算</code>数据。材料体系涉及无机化合物、纳米孔隙材料、嵌入型电极材料和转化型电极材料。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="7" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="8" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/12%20AFLOW%E6%95%B0%E6%8D%AE%E5%BA%93%E6%95%B0%E6%8D%AE%E9%87%8F%E7%BB%9F%E8%AE%A12020.JPG&quot;);background-size:400px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="8" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="8" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-7">8.1 材料计算简介</h2>
+<font size=5>
+<p>AFLOW 计 算材料 数据库(<code>http://www.aflowlib.org/</code>),是由杜克大学在2011年开发的一个开放数据库。数据库中包含了大量<code>第一性原理计算</code>所得的数据，目前已存储了关于无机化合物、二元合金与多元合金等超过557 043 524条涉及2 945 940种材料的结构、性能数据，其中绝大多数数据都是预测得出的，是诸多数据库中数据含量最大的一个。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="8" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="9" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/13%20ICSD%E6%95%B0%E6%8D%AE%E5%BA%93%E7%BB%9F%E8%AE%A12020.JPG&quot;);background-size:400px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="9" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="9" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="81-%E6%9D%90%E6%96%99%E8%AE%A1%E7%AE%97%E7%AE%80%E4%BB%8B-8">8.1 材料计算简介</h2>
+<font size=5>
+<p>ICSD无机晶体结构数据库(<code>http://icsd.fizkarlsruhe.de/</code>)由德国波恩大学等机构合作创建，自1913年起维护至今。它包含超过21万种晶体结构，覆盖了金属、合金、陶瓷等非有机化合物。是全球最大的无机晶体结构数据库。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="9" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="10" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="10" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="82-%E2%96%B3%E2%98%85%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E5%92%8C%E5%B7%A5%E5%85%B7-1">8.2 △★计算方法和工具</h2>
+<font size=5>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-pymatgen%E5%92%8Cmatminer">8.2.1 材料结构建模和性质数据库 (PyMatGen和Matminer)</h2>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-computer-coupling-of-phase-diagrams-and-thermochemistry">8.2.2 相图计算(CALPHAD, Computer Coupling of Phase Diagrams and Thermochemistry)</h2>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-atomic-simulation-environment">8.2.3 原子模拟环境(ASE, Atomic Simulation Environment)</h2>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="11" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="11" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93">8.2.1 材料结构建模和性质数据库</h2>
+<p>PyMatGen调用Materials Project数据<br />
+<font size=5></p>
+<ol>
+<li>
+<p><code>获取Materials Project API密钥</code>：首先，在Materials Project网站上注册并获取API密钥。这个密钥将用于身份验证和访问数据。</p>
+</li>
+<li>
+<p><code>安装所需的Python库</code>：需要使用Python库来与Materials Project API进行通信。一个常用的库是pymatgen，它可以帮助您处理材料数据。您可以使用以下命令安装它：</p>
+</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">pip install pymatgen
+</code></pre>
+<ol start="3">
+<li><code>编写Python代码</code>：使用Python编写代码以访问Materials Project数据。下面是一个示例代码，演示如何使用pymatgen库来获取所有单元素材料的密度数据：</li>
+</ol>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="12" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="12" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-1">8.2.1 材料结构建模和性质数据库</h2>
+<p>PyMatGen调用Materials Project数据<br />
+<font size=5></p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> pymatgen.ext.matproj <span class="hljs-keyword">import</span> MPRester
+
+<span class="hljs-comment"># 替换成您自己的Materials Project API密钥</span>
+api_key = <span class="hljs-string">&quot;YOUR_API_KEY_HERE&quot;</span>
+
+<span class="hljs-comment"># 创建MPRester对象并使用API密钥进行身份验证</span>
+<span class="hljs-keyword">with</span> MPRester(api_key) <span class="hljs-keyword">as</span> mpr:
+    <span class="hljs-comment"># 获取所有单元素材料的密度数据</span>
+    data = mpr.query({<span class="hljs-string">&quot;elements&quot;</span>: {<span class="hljs-string">&quot;$in&quot;</span>: [<span class="hljs-string">&quot;H&quot;</span>, <span class="hljs-string">&quot;He&quot;</span>, <span class="hljs-string">&quot;Li&quot;</span>, <span class="hljs-string">&quot;Be&quot;</span>, <span class="hljs-string">&quot;B&quot;</span>, <span class="hljs-string">&quot;C&quot;</span>, <span class="hljs-string">&quot;N&quot;</span>, <span class="hljs-string">&quot;O&quot;</span>, <span class="hljs-string">&quot;F&quot;</span>, <span class="hljs-string">&quot;Ne&quot;</span>]}}, properties=[<span class="hljs-string">&quot;density&quot;</span>])
+
+<span class="hljs-comment"># 打印结果</span>
+<span class="hljs-keyword">for</span> entry <span class="hljs-keyword">in</span> data:
+    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;Material: <span class="hljs-subst">{entry[<span class="hljs-string">&#x27;material_id&#x27;</span>]}</span>, Density: <span class="hljs-subst">{entry[<span class="hljs-string">&#x27;density&#x27;</span>]}</span> g/cm^3&quot;</span>)
+</code></pre>
+<ol start="4">
+<li><code>运行代码</code>：运行Python代码，它将使用您的API密钥与Materials Project API通信并检索所需的数据。</li>
+</ol>
+<p>Materials Project API提供了许多其他可用于检索各种材料属性和数据的选项。可以根据研究需求编写不同的代码来获取所需的数据。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="13" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="13" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-2">8.2.1 材料结构建模和性质数据库</h2>
+<font size=6>
+<p>Matminer调用数据库：工作流程和功能</p>
+<p><img src="../figs/10.png" alt="" style="width:800px;" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="14" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="14" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-3">8.2.1 材料结构建模和性质数据库</h2>
+<font size=6>
+<p>Matminer调用数据库：数据检索可以轻松地将复杂的在线数据放入数据框中</p>
+<p><img src="../figs/11.png" alt="" style="width:800px;" /><br />
+</font></p>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="15" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="15" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-4">8.2.1 材料结构建模和性质数据库</h2>
+<font size=5>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="16" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="16" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="821-%E6%9D%90%E6%96%99%E7%BB%93%E6%9E%84%E5%BB%BA%E6%A8%A1%E5%92%8C%E6%80%A7%E8%B4%A8%E6%95%B0%E6%8D%AE%E5%BA%93-5">8.2.1 材料结构建模和性质数据库</h2>
+<font size=5>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="17" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="17" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad">8.2.2 相图计算(CALPHAD)</h2>
+<p><strong>相图计算原理</strong><br />
+<font size=6></p>
+<p>等温等压条件下合金相图中热力学平衡条件依赖于化学势平衡条件.</p>
+<p>化学势（μ）用于描述组分在不同相中的平衡。在多组分系统中，相平衡可以用化学势平衡条件表示：</p>
+<p><mjx-container class="MathJax" jax="SVG" display="true" style="margin: 0;"><svg style="vertical-align: -0.682ex; display: block; width: 100%; height: auto; max-height: 2.921ex;" xmlns="http://www.w3.org/2000/svg" width="8.051ex" height="2.921ex" role="img" focusable="false" viewBox="0 -989.3 3558.3 1290.9"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="msubsup"><g data-mml-node="mi"><path data-c="1D707" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"></path></g><g data-mml-node="TeXAtom" transform="translate(636,413) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D6FC" d="M34 156Q34 270 120 356T309 442Q379 442 421 402T478 304Q484 275 485 237V208Q534 282 560 374Q564 388 566 390T582 393Q603 393 603 385Q603 376 594 346T558 261T497 161L486 147L487 123Q489 67 495 47T514 26Q528 28 540 37T557 60Q559 67 562 68T577 70Q597 70 597 62Q597 56 591 43Q579 19 556 5T512 -10H505Q438 -10 414 62L411 69L400 61Q390 53 370 41T325 18T267 -2T203 -11Q124 -11 79 39T34 156ZM208 26Q257 26 306 47T379 90L403 112Q401 255 396 290Q382 405 304 405Q235 405 183 332Q156 292 139 224T121 120Q121 71 146 49T208 26Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(636,-247) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g><g data-mml-node="mo" transform="translate(1416.3,0)"><path data-c="3D" d="M56 347Q56 360 70 367H707Q722 359 722 347Q722 336 708 328L390 327H72Q56 332 56 347ZM56 153Q56 168 72 173H708Q722 163 722 153Q722 140 707 133H70Q56 140 56 153Z"></path></g><g data-mml-node="msubsup" transform="translate(2472.1,0)"><g data-mml-node="mi"><path data-c="1D707" d="M58 -216Q44 -216 34 -208T23 -186Q23 -176 96 116T173 414Q186 442 219 442Q231 441 239 435T249 423T251 413Q251 401 220 279T187 142Q185 131 185 107V99Q185 26 252 26Q261 26 270 27T287 31T302 38T315 45T327 55T338 65T348 77T356 88T365 100L372 110L408 253Q444 395 448 404Q461 431 491 431Q504 431 512 424T523 412T525 402L449 84Q448 79 448 68Q448 43 455 35T476 26Q485 27 496 35Q517 55 537 131Q543 151 547 152Q549 153 557 153H561Q580 153 580 144Q580 138 575 117T555 63T523 13Q510 0 491 -8Q483 -10 467 -10Q446 -10 429 -4T402 11T385 29T376 44T374 51L368 45Q362 39 350 30T324 12T288 -4T246 -11Q199 -11 153 12L129 -85Q108 -167 104 -180T92 -202Q76 -216 58 -216Z"></path></g><g data-mml-node="TeXAtom" transform="translate(636,490.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D6FD" d="M29 -194Q23 -188 23 -186Q23 -183 102 134T186 465Q208 533 243 584T309 658Q365 705 429 705H431Q493 705 533 667T573 570Q573 465 469 396L482 383Q533 332 533 252Q533 139 448 65T257 -10Q227 -10 203 -2T165 17T143 40T131 59T126 65L62 -188Q60 -194 42 -194H29ZM353 431Q392 431 427 419L432 422Q436 426 439 429T449 439T461 453T472 471T484 495T493 524T501 560Q503 569 503 593Q503 611 502 616Q487 667 426 667Q384 667 347 643T286 582T247 514T224 455Q219 439 186 308T152 168Q151 163 151 147Q151 99 173 68Q204 26 260 26Q302 26 349 51T425 137Q441 171 449 214T457 279Q457 337 422 372Q380 358 347 358H337Q258 358 258 389Q258 396 261 403Q275 431 353 431Z"></path></g></g><g data-mml-node="TeXAtom" transform="translate(636,-293.8) scale(0.707)" data-mjx-texclass="ORD"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></g></g></svg></mjx-container></p><p>分别是组分<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="0.781ex" height="1.52ex" role="img" focusable="false" viewBox="0 -661 345 672"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D456" d="M184 600Q184 624 203 642T247 661Q265 661 277 649T290 619Q290 596 270 577T226 557Q211 557 198 567T184 600ZM21 287Q21 295 30 318T54 369T98 420T158 442Q197 442 223 419T250 357Q250 340 236 301T196 196T154 83Q149 61 149 51Q149 26 166 26Q175 26 185 29T208 43T235 78T260 137Q263 149 265 151T282 153Q302 153 302 143Q302 135 293 112T268 61T223 11T161 -11Q129 -11 102 10T74 74Q74 91 79 106T122 220Q160 321 166 341T173 380Q173 404 156 404H154Q124 404 99 371T61 287Q60 286 59 284T58 281T56 279T53 278T49 278T41 278H27Q21 284 21 287Z"></path></g></g></g></svg></mjx-container>在相<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.025ex;" xmlns="http://www.w3.org/2000/svg" width="1.448ex" height="1.025ex" role="img" focusable="false" viewBox="0 -442 640 453"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FC" d="M34 156Q34 270 120 356T309 442Q379 442 421 402T478 304Q484 275 485 237V208Q534 282 560 374Q564 388 566 390T582 393Q603 393 603 385Q603 376 594 346T558 261T497 161L486 147L487 123Q489 67 495 47T514 26Q528 28 540 37T557 60Q559 67 562 68T577 70Q597 70 597 62Q597 56 591 43Q579 19 556 5T512 -10H505Q438 -10 414 62L411 69L400 61Q390 53 370 41T325 18T267 -2T203 -11Q124 -11 79 39T34 156ZM208 26Q257 26 306 47T379 90L403 112Q401 255 396 290Q382 405 304 405Q235 405 183 332Q156 292 139 224T121 120Q121 71 146 49T208 26Z"></path></g></g></g></svg></mjx-container>和相<mjx-container class="MathJax" jax="SVG"><svg style="vertical-align: -0.439ex;" xmlns="http://www.w3.org/2000/svg" width="1.281ex" height="2.034ex" role="img" focusable="false" viewBox="0 -705 566 899"><g stroke="currentColor" fill="currentColor" stroke-width="0" transform="scale(1,-1)"><g data-mml-node="math"><g data-mml-node="mi"><path data-c="1D6FD" d="M29 -194Q23 -188 23 -186Q23 -183 102 134T186 465Q208 533 243 584T309 658Q365 705 429 705H431Q493 705 533 667T573 570Q573 465 469 396L482 383Q533 332 533 252Q533 139 448 65T257 -10Q227 -10 203 -2T165 17T143 40T131 59T126 65L62 -188Q60 -194 42 -194H29ZM353 431Q392 431 427 419L432 422Q436 426 439 429T449 439T461 453T472 471T484 495T493 524T501 560Q503 569 503 593Q503 611 502 616Q487 667 426 667Q384 667 347 643T286 582T247 514T224 455Q219 439 186 308T152 168Q151 163 151 147Q151 99 173 68Q204 26 260 26Q302 26 349 51T425 137Q441 171 449 214T457 279Q457 337 422 372Q380 358 347 358H337Q258 358 258 389Q258 396 261 403Q275 431 353 431Z"></path></g></g></g></svg></mjx-container>中的化学势。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="18" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="18" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-1">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<p>相平衡状态图研究由一种或数种物质所构成的相平衡系统的性质（如沸点、熔点、蒸汽压、溶解度等）与条件（如温度、压力及组成等） 的函数关系，这种关系的图叫<code>相图（phase diagram）</code>。</p>
+<p><img src="../figs/9.jpg" alt="" style="width:400px;" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="19" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="19" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-2">8.2.2 相图计算(CALPHAD)</h2>
+<font size=4>
+<p>相图计算是材料科学和热力学研究中的重要任务之一，它有助于理解物质在不同温度、压力和成分条件下的相变行为。在 Python 中可以使用 pycalphad 库来进行相图计算。</p>
+<table>
+<thead>
+<tr>
+<th><strong>特点</strong></th>
+<th><strong>相图计算</strong></th>
+<th><strong>实验测量</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>数据来源</strong></td>
+<td>使用热力学数据库中的数据进行计算。</td>
+<td>通过实验室实际测量得到数据。</td>
+</tr>
+<tr>
+<td><strong>精度和可靠性</strong></td>
+<td>取决于数据库质量和模型准确性。</td>
+<td>受实验条件和仪器精度的影响，有一定不确定性。</td>
+</tr>
+<tr>
+<td><strong>应用</strong></td>
+<td>用于预测新材料性质、相变行为。</td>
+<td>用于验证已知材料性质、实验结果。</td>
+</tr>
+<tr>
+<td><strong>研究范围</strong></td>
+<td>可以探索广泛的组分、温度和压力范围。</td>
+<td>受实验条件和材料可用性限制。</td>
+</tr>
+<tr>
+<td><strong>时间和成本</strong></td>
+<td>相对较快且成本较低，尤其是用于预测。</td>
+<td>可能需要更多时间和资源来进行实验。</td>
+</tr>
+<tr>
+<td><strong>灵活性</strong></td>
+<td>可根据需要轻松修改计算条件和组分。</td>
+<td>实验条件和样品准备可能受限制。</td>
+</tr>
+<tr>
+<td><strong>验证</strong></td>
+<td>需要与实验数据进行比较和验证。</td>
+<td>通常用来验证计算结果的准确性。</td>
+</tr>
+</tbody>
+</table>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="20" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/1.png&quot;);background-size:300px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="20" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="20" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-3">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<p>pycalphad 是一个免费使用 CALPHAD 方法计算热力学的 Python 库，用于 设计热力学模型，计算相图和 用calphad方法研究相平衡。</p>
+<p>pycalphad 提供读取Thermo Calc TDB文件和 求解多组分多相吉布斯能量最小化程序。</p>
+</font>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">(https://pycalphad.org/)
+</code></pre>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="20" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="21" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="21" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-4">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<ol>
+<li>使用 TDB 文件计算<code>等压</code>二元相图</li>
+</ol>
+<p><img src="../figs/6.png" alt="" style="width:350px;" /> <img src="../figs/2.png" alt="" style="width:350px;" /><br />
+<img src="../figs/3.png" alt="" style="width:350px;" /> <img src="../figs/4.png" alt="" style="width:350px;" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="22" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="22" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-5">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<p>al-zn（铝锌）合合金二元相图计算</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 引入 matplotlib 库并设置以内联方式显示图形</span>
+%matplotlib inline
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-comment"># 引入 pycalphad 库中的 Database、binplot 和 variables 模块</span>
+<span class="hljs-keyword">from</span> pycalphad <span class="hljs-keyword">import</span> Database, binplot
+<span class="hljs-keyword">import</span> pycalphad.variables <span class="hljs-keyword">as</span> v
+
+<span class="hljs-comment"># 加载数据库文件并选择将要考虑的相位</span>
+db_alzn = Database(<span class="hljs-string">&#x27;alzn_mey.tdb&#x27;</span>)
+my_phases_alzn = [<span class="hljs-string">&#x27;LIQUID&#x27;</span>, <span class="hljs-string">&#x27;FCC_A1&#x27;</span>, <span class="hljs-string">&#x27;HCP_A3&#x27;</span>]
+
+<span class="hljs-comment"># 创建一个 matplotlib 的 Figure 对象并获取当前活动的 Axes 对象</span>
+fig = plt.figure(figsize=(<span class="hljs-number">9</span>, <span class="hljs-number">6</span>))
+axes = fig.gca()
+
+<span class="hljs-comment"># 计算相图并在现有的坐标轴上绘制它，使用 `plot_kwargs={&#x27;ax&#x27;: axes}` 关键字参数</span>
+binplot(db_alzn, [<span class="hljs-string">&#x27;AL&#x27;</span>, <span class="hljs-string">&#x27;ZN&#x27;</span>, <span class="hljs-string">&#x27;VA&#x27;</span>], my_phases_alzn, {v.X(<span class="hljs-string">&#x27;ZN&#x27;</span>): (<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0.02</span>), v.T: (<span class="hljs-number">300</span>, <span class="hljs-number">1000</span>, <span class="hljs-number">10</span>), v.P: <span class="hljs-number">101325</span>, v.N: <span class="hljs-number">1</span>}, plot_kwargs={<span class="hljs-string">&#x27;ax&#x27;</span>: axes})
+
+<span class="hljs-comment"># 显示图形</span>
+plt.show()
+
+
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="23" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="23" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-6">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<ol start="2">
+<li>
+<p>计算二元系统的能量面<br />
+在 CALPHAD 建模中可检查系统中所有组成相的吉布斯能面。nb-re（铌铼）计算给定温度 (2800 K) 下所有相的吉布斯能量作为成分的函数。chi 相具有额外的内部自由度，使其能够针对给定的整体成分呈现多种状态。只有低能态与计算平衡相图相关。</p>
+<p><img src="../figs/8.png" alt="Alt text" /></p>
+</li>
+</ol>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="24" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="24" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-7">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 引入matplotlib库并使用&quot;%matplotlib inline&quot;命令以内联方式显示图形</span>
+<span class="hljs-keyword">import</span> matplotlib.pyplot <span class="hljs-keyword">as</span> plt
+
+<span class="hljs-comment"># 引入pycalphad库中的Database、calculate、variables和plot工具中的phase_legend</span>
+<span class="hljs-keyword">from</span> pycalphad <span class="hljs-keyword">import</span> Database, calculate, variables <span class="hljs-keyword">as</span> v
+<span class="hljs-keyword">from</span> pycalphad.plot.utils <span class="hljs-keyword">import</span> phase_legend
+
+<span class="hljs-comment"># 引入numpy库并重命名为np</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+<span class="hljs-comment"># 加载热力学数据库文件&#x27;nbre_liu.tdb&#x27;，并创建数据库对象db_nbre</span>
+db_nbre = Database(<span class="hljs-string">&#x27;nbre_liu.tdb&#x27;</span>)
+
+<span class="hljs-comment"># 定义要绘制的相位名称列表</span>
+my_phases_nbre = [<span class="hljs-string">&#x27;CHI_RENB&#x27;</span>, <span class="hljs-string">&#x27;SIGMARENB&#x27;</span>, <span class="hljs-string">&#x27;FCC_RENB&#x27;</span>, <span class="hljs-string">&#x27;LIQUID_RENB&#x27;</span>, <span class="hljs-string">&#x27;BCC_RENB&#x27;</span>, <span class="hljs-string">&#x27;HCP_RENB&#x27;</span>]
+
+<span class="hljs-comment"># 获取相位名称到颜色的映射关系，以用于图例</span>
+legend_handles, color_dict = phase_legend(my_phases_nbre)
+
+<span class="hljs-comment"># 创建一个图形窗口，指定图形大小为(9, 6)，并获取坐标轴对象ax</span>
+fig = plt.figure(figsize=(<span class="hljs-number">9</span>, <span class="hljs-number">6</span>))
+ax = fig.gca()
+
+<span class="hljs-comment"># 遍历相位名称列表，计算吉布斯自由能，并散点绘制GM vs. X(RE)图形</span>
+<span class="hljs-keyword">for</span> phase_name <span class="hljs-keyword">in</span> my_phases_nbre:
+    <span class="hljs-comment"># 使用calculate函数计算吉布斯自由能，输出为&#x27;GM&#x27;</span>
+    result = calculate(db_nbre, [<span class="hljs-string">&#x27;NB&#x27;</span>, <span class="hljs-string">&#x27;RE&#x27;</span>], phase_name, P=<span class="hljs-number">101325</span>, T=<span class="hljs-number">2800</span>, output=<span class="hljs-string">&#x27;GM&#x27;</span>)
+    
+    <span class="hljs-comment"># 绘制散点图，X轴为&#x27;Re&#x27;的摩尔分数，Y轴为吉布斯自由能，设置散点标记、大小和颜色</span>
+    ax.scatter(result.X.sel(component=<span class="hljs-string">&#x27;RE&#x27;</span>), result.GM, marker=<span class="hljs-string">&#x27;.&#x27;</span>, s=<span class="hljs-number">5</span>, color=color_dict[phase_name])
+
+<span class="hljs-comment"># 设置图形的X轴和Y轴标签以及X轴的范围</span>
+ax.set_xlabel(<span class="hljs-string">&#x27;X(RE)&#x27;</span>)
+ax.set_ylabel(<span class="hljs-string">&#x27;GM&#x27;</span>)
+ax.set_xlim((<span class="hljs-number">0</span>, <span class="hljs-number">1</span>))
+
+<span class="hljs-comment"># 添加图例，并设置图例位置和相对位置</span>
+ax.legend(handles=legend_handles, loc=<span class="hljs-string">&#x27;center left&#x27;</span>, bbox_to_anchor=(<span class="hljs-number">1</span>, <span class="hljs-number">0.6</span>))
+
+<span class="hljs-comment"># 显示图形</span>
+plt.show()
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="25" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/8.png&quot;);background-size:500px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="25" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="25" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="822-%E7%9B%B8%E5%9B%BE%E8%AE%A1%E7%AE%97calphad-8">8.2.2 相图计算(CALPHAD)</h2>
+<font size=5>
+<ol start="3">
+<li>
+<p>绘制三元相图并使用三角轴</p>
+<p>在热力学中可使用二维图来表达三组分系统中的平衡。</p>
+</li>
+</ol>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="25" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="26" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="26" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p><strong>原子模拟环境</strong> (ASE, Atomic Simulation Environment <code>https://wiki.fysik.dtu.dk/ase/</code>) 是一个用于分子动力学和材料建模的Python库。它提供了丰富的工具和功能，使科学家和工程师能够模拟原子和分子的行为，以研究材料的性质、结构和相互作用。主要特点和功能：</p>
+<ol>
+<li>
+<p><strong>多样的模拟方法</strong>：ASE支持多种分子动力学方法，包括分子动力学、Monte Carlo模拟、自洽场计算等，可以用于不同类型的材料建模。</p>
+</li>
+<li>
+<p><strong>材料建模</strong>：ASE可以用于构建材料的晶格结构、计算能带结构、分析晶格动力学，以及模拟材料的机械性能。</p>
+</li>
+<li>
+<p><strong>界面友好</strong>：ASE提供了简单的Python接口，易于使用和扩展。它还允许用户将ASE与其他科学计算库（如Numpy、SciPy）集成在一起。</p>
+</li>
+<li>
+<p><strong>广泛的材料性质计算</strong>：ASE可以用于计算材料的多种性质，包括能带结构、电子结构、热力学性质、声学性质等。</p>
+</li>
+<li>
+<p><strong>可视化工具</strong>：ASE提供了可视化工具，允许用户可视化模拟过程和结果，以便更好地理解材料的行为。</p>
+</li>
+<li>
+<p><strong>兼容性</strong>：ASE支持多种第三方软件和计算引擎，如<strong>VASP</strong>、<strong>LAMMPS</strong>、<strong>Gaussian</strong>等，使其能够与现有的计算工具无缝集成。</p>
+</li>
+</ol>
+<p>开源和活跃的社区：ASE是一个<strong>开源项目</strong>，拥有活跃的开发者和用户社区，不断更新和改进库的功能和性能。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="27" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="27" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-1">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<ol>
+<li>计算计算原子化能</li>
+</ol>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入模块</span>
+<span class="hljs-keyword">from</span> ase <span class="hljs-keyword">import</span> Atoms  <span class="hljs-comment"># 从ASE库导入Atoms类，用于创建原子和分子结构</span>
+<span class="hljs-keyword">from</span> ase.calculators.emt <span class="hljs-keyword">import</span> EMT  <span class="hljs-comment"># 从ASE的emt模块导入EMT计算器，用于计算能量</span>
+
+<span class="hljs-comment"># 创建单个氮原子</span>
+atom = Atoms(<span class="hljs-string">&#x27;N&#x27;</span>)  <span class="hljs-comment"># 创建一个包含单个氮原子的Atoms对象</span>
+atom.calc = EMT()  <span class="hljs-comment"># 使用EMT计算器计算氮原子的能量</span>
+e_atom = atom.get_potential_energy()  <span class="hljs-comment"># 获取氮原子的势能能量</span>
+
+<span class="hljs-comment"># 创建氮分子</span>
+d = <span class="hljs-number">1.1</span>  <span class="hljs-comment"># 定义氮分子的原子间距</span>
+molecule = Atoms(<span class="hljs-string">&#x27;2N&#x27;</span>, [(<span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>), (<span class="hljs-number">0.</span>, <span class="hljs-number">0.</span>, d)])  <span class="hljs-comment"># 创建一个包含两个氮原子的Atoms对象</span>
+molecule.calc = EMT()  <span class="hljs-comment"># 使用EMT计算器计算氮分子的能量</span>
+e_molecule = molecule.get_potential_energy()  <span class="hljs-comment"># 获取氮分子的势能能量</span>
+
+<span class="hljs-comment"># 计算原子化能</span>
+e_atomization = e_molecule - <span class="hljs-number">2</span> * e_atom  <span class="hljs-comment"># 计算原子化能，即氮分子减去两倍氮原子的能量</span>
+
+<span class="hljs-comment"># 打印结果</span>
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;氮原子能量: %5.2f eV&#x27;</span> % e_atom)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;氮分子能量: %5.2f eV&#x27;</span> % e_molecule)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;原子化能: %5.2f eV&#x27;</span> % -e_atomization)  <span class="hljs-comment"># 注意，这里取负号以得到正数的原子化能</span>
+
+输出：
+Nitrogen atom energy:  <span class="hljs-number">5.10</span> eV
+Nitrogen molecule energy:  <span class="hljs-number">0.44</span> eV
+Atomization energy:  <span class="hljs-number">9.76</span> eV
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="28" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="28" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-2">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<ol start="2">
+<li>状态方程 (EOS)</li>
+</ol>
+<p>首先，对不同的晶格常数进行批量计算：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入所需的库</span>
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+<span class="hljs-keyword">from</span> ase <span class="hljs-keyword">import</span> Atoms
+<span class="hljs-keyword">from</span> ase.calculators.emt <span class="hljs-keyword">import</span> EMT
+<span class="hljs-keyword">from</span> ase.io.trajectory <span class="hljs-keyword">import</span> Trajectory
+
+<span class="hljs-comment"># 定义银晶体的初基格矢和使用EMT势能计算器</span>
+a = <span class="hljs-number">4.0</span>  <span class="hljs-comment"># 初始晶格常数</span>
+b = a / <span class="hljs-number">2</span>
+ag = Atoms(<span class="hljs-string">&#x27;Ag&#x27;</span>,
+           cell=[(<span class="hljs-number">0</span>, b, b), (b, <span class="hljs-number">0</span>, b), (b, b, <span class="hljs-number">0</span>)],
+           pbc=<span class="hljs-number">1</span>,
+           calculator=EMT())
+
+<span class="hljs-comment"># 获取晶格参数和创建轨迹文件</span>
+cell = ag.get_cell()
+traj = Trajectory(<span class="hljs-string">&#x27;Ag.traj&#x27;</span>, <span class="hljs-string">&#x27;w&#x27;</span>)
+
+<span class="hljs-comment"># 在不同的晶格参数下进行循环</span>
+<span class="hljs-keyword">for</span> x <span class="hljs-keyword">in</span> np.linspace(<span class="hljs-number">0.95</span>, <span class="hljs-number">1.05</span>, <span class="hljs-number">5</span>):
+    <span class="hljs-comment"># 调整晶格参数并重新计算能量</span>
+    ag.set_cell(cell * x, scale_atoms=<span class="hljs-literal">True</span>)
+    ag.get_potential_energy()
+    <span class="hljs-comment"># 将构型写入轨迹文件</span>
+    traj.write(ag)
+
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="29" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="background" data-marpit-advanced-background-split="right"><div data-marpit-advanced-background-container="true" data-marpit-advanced-background-direction="horizontal"><figure style="background-image:url(&quot;../figs/Ag-eos.png&quot;);background-size:500px auto;"></figure></div></section></foreignObject><foreignObject width="50%" height="720"><section id="29" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="29" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;--marpit-advanced-background-split:50%;" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="content" data-marpit-advanced-background-split="right">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-3">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p>编写一个轨迹文件，其中包含五种不同晶格常数的 FCC 银的五种配置。EquationOfState现在，使用类和此脚本分析结果：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python">
+<span class="hljs-comment"># 从轨迹文件中读取构型和能量数据</span>
+<span class="hljs-keyword">from</span> ase.eos <span class="hljs-keyword">import</span> EquationOfState
+<span class="hljs-keyword">from</span> ase.io <span class="hljs-keyword">import</span> read
+<span class="hljs-keyword">from</span> ase.units <span class="hljs-keyword">import</span> kJ
+
+configs = read(<span class="hljs-string">&#x27;Ag.traj@0:5&#x27;</span>)  <span class="hljs-comment"># 读取5个构型</span>
+<span class="hljs-comment"># 提取体积和能量</span>
+volumes = [ag.get_volume() <span class="hljs-keyword">for</span> ag <span class="hljs-keyword">in</span> configs]
+energies = [ag.get_potential_energy() <span class="hljs-keyword">for</span> ag <span class="hljs-keyword">in</span> configs]
+
+<span class="hljs-comment"># 使用EquationOfState拟合状态方程</span>
+eos = EquationOfState(volumes, energies)
+v0, e0, B = eos.fit()
+<span class="hljs-comment"># 打印弹性模量（GPa）</span>
+<span class="hljs-built_in">print</span>(B / kJ * <span class="hljs-number">1.0e24</span>, <span class="hljs-string">&#x27;GPa&#x27;</span>)
+<span class="hljs-comment"># 生成状态方程图像</span>
+eos.plot(<span class="hljs-string">&#x27;Ag-eos.png&#x27;</span>)
+
+
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject><foreignObject width="960" height="720" data-marpit-advanced-background="pseudo"><section data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="29" style="" data-marpit-pagination-total="34" data-size="4:3" data-marpit-advanced-background="pseudo" data-marpit-advanced-background-split="right"></section></foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="30" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="30" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-4">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p>ASE（Atomic Simulation Environment）是一个功能强大的Python库，可以用来生成<strong>VASP</strong>（Vienna Ab Initio Simulation Package）的输入文件。ASE生成VASP输入文件的一般步骤：</p>
+<ol>
+<li>
+<p>导入必要的ASE库：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-keyword">from</span> ase <span class="hljs-keyword">import</span> Atoms
+<span class="hljs-keyword">from</span> ase.io <span class="hljs-keyword">import</span> write
+</code></pre>
+</li>
+<li>
+<p>创建原子结构：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 定义原子的种类和坐标</span>
+atoms = Atoms(symbols=[<span class="hljs-string">&#x27;H&#x27;</span>, <span class="hljs-string">&#x27;O&#x27;</span>],
+            positions=[(<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>), (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">1.0</span>)])
+
+<span class="hljs-comment"># 设置晶胞参数</span>
+atoms.set_cell([<span class="hljs-number">5</span>, <span class="hljs-number">5</span>, <span class="hljs-number">5</span>])
+
+<span class="hljs-comment"># 设置原子间相互作用（例如，使用Lennard-Jones势能）</span>
+atoms.set_calculator(EMT())
+</code></pre>
+</li>
+<li>
+<p>生成VASP输入文件：</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 指定输出文件名</span>
+output_file = <span class="hljs-string">&#x27;POSCAR&#x27;</span>
+
+<span class="hljs-comment"># 使用ASE的write函数生成VASP的POSCAR文件</span>
+write(output_file, atoms, <span class="hljs-built_in">format</span>=<span class="hljs-string">&#x27;vasp&#x27;</span>)
+</code></pre>
+</li>
+</ol>
+<p>生成一个名为'POSCAR'的VASP输入文件，包含原子坐标、晶格常数等信息。</p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="31" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="31" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-5">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p>使用ASE库中的ase.build模块创建了两个碳纳米管（Carbon Nanotube，CNT）模型，其中一个是纯碳纳米管，另一个是含有硅（Si）原子的碳纳米管。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入必要的模块</span>
+<span class="hljs-keyword">from</span> ase.build <span class="hljs-keyword">import</span> nanotube
+
+<span class="hljs-comment"># 创建纯碳纳米管（CNT1）</span>
+<span class="hljs-comment"># nanotube()函数用于创建碳纳米管模型。</span>
+<span class="hljs-comment"># 参数6表示CNT的(n, m)索引，其中n和m是整数，指定碳纳米管的结构。</span>
+<span class="hljs-comment"># 参数0表示该碳纳米管的扩展方向是沿着Z轴。</span>
+<span class="hljs-comment"># 参数length=4表示CNT的长度为4个单位。</span>
+cnt1 = nanotube(<span class="hljs-number">6</span>, <span class="hljs-number">0</span>, length=<span class="hljs-number">4</span>)
+
+<span class="hljs-comment"># 创建含有硅原子的碳纳米管（CNT2）</span>
+<span class="hljs-comment"># 同样，nanotube()函数用于创建碳纳米管模型。</span>
+<span class="hljs-comment"># 参数3和3表示CNT的(n, m)索引。</span>
+<span class="hljs-comment"># 参数length=6表示CNT的长度为6个单位。</span>
+<span class="hljs-comment"># 参数bond=1.4表示CNT中碳-碳键的键长为1.4 Ångströms。</span>
+<span class="hljs-comment"># 参数symbol=&#x27;Si&#x27;表示将硅（Si）原子添加到碳纳米管中。</span>
+cnt2 = nanotube(<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, length=<span class="hljs-number">6</span>, bond=<span class="hljs-number">1.4</span>, symbol=<span class="hljs-string">&#x27;Si&#x27;</span>)
+</code></pre>
+<p><img src="../figs/cnt1.png" alt="Alt text" />  <img src="../figs/cnt2.png" alt="Alt text" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="32" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="32" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-6">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p>使用ASE库中的ase.build模块创建了两种不同类型的石墨烯纳米带（Graphene Nanoribbon，GNR）模型，分别是“armchair”型和“zigzag”型，以及对这些模型进行了一些特定的设定。</p>
+<pre is="marp-pre" data-auto-scaling="downscale-only"><code class="language-python"><span class="hljs-comment"># 导入必要的模块</span>
+<span class="hljs-keyword">from</span> ase.build <span class="hljs-keyword">import</span> graphene_nanoribbon
+
+<span class="hljs-comment"># 创建“armchair”型石墨烯纳米带（GNR1）</span>
+<span class="hljs-comment"># graphene_nanoribbon()函数用于创建石墨烯纳米带模型。</span>
+<span class="hljs-comment"># 参数3和4表示GNR的(n, m)索引，这里为(3, 4)。</span>
+<span class="hljs-comment"># 参数type=&#x27;armchair&#x27;表示创建“armchair”型石墨烯纳米带。</span>
+<span class="hljs-comment"># 参数saturated=True表示饱和边缘，即氢原子饱和。</span>
+<span class="hljs-comment"># 参数vacuum=3.5表示在GNR上方创建3.5 Ångströms的真空层。</span>
+gnr1 = graphene_nanoribbon(<span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">&#x27;armchair&#x27;</span>, saturated=<span class="hljs-literal">True</span>, vacuum=<span class="hljs-number">3.5</span>)
+
+<span class="hljs-comment"># 创建“zigzag”型石墨烯纳米带（GNR2）</span>
+<span class="hljs-comment"># 同样，graphene_nanoribbon()函数用于创建石墨烯纳米带模型。</span>
+<span class="hljs-comment"># 参数2和6表示GNR的(n, m)索引，这里为(2, 6)。</span>
+<span class="hljs-comment"># 参数type=&#x27;zigzag&#x27;表示创建“zigzag”型石墨烯纳米带。</span>
+<span class="hljs-comment"># 参数saturated=True表示饱和边缘。</span>
+<span class="hljs-comment"># 参数C_H=1.1和C_C=1.4表示碳-氢键的键长为1.1 Ångströms，碳-碳键的键长为1.4 Ångströms。</span>
+<span class="hljs-comment"># 参数vacuum=3.0表示在GNR上方创建3.0 Ångströms的真空层。</span>
+<span class="hljs-comment"># 参数magnetic=True表示在GNR上引入磁性。</span>
+<span class="hljs-comment"># 参数initial_mag=1.12表示初始化的磁矩为1.12 Bohr magnetons。</span>
+gnr2 = graphene_nanoribbon(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>, <span class="hljs-built_in">type</span>=<span class="hljs-string">&#x27;zigzag&#x27;</span>, saturated=<span class="hljs-literal">True</span>, C_H=<span class="hljs-number">1.1</span>, C_C=<span class="hljs-number">1.4</span>,
+                           vacuum=<span class="hljs-number">3.0</span>, magnetic=<span class="hljs-literal">True</span>, initial_mag=<span class="hljs-number">1.12</span>)
+</code></pre>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="33" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="33" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<h2 id="823-%E5%8E%9F%E5%AD%90%E6%A8%A1%E6%8B%9F%E7%8E%AF%E5%A2%83ase-7">8.2.3 原子模拟环境(ASE)</h2>
+<font size=4>
+<p><img src="../figs/gnr1.png" alt="Alt text" />  <img src="../figs/gnr2.png" alt="Alt text" /></p>
+</font>
+<footer>2023-09-16</footer>
+</section>
+</foreignObject></svg><svg data-marpit-svg="" viewBox="0 0 960 720"><foreignObject width="960" height="720"><section id="34" data-footer="2023-09-16" data-header="第七章：Python在材料计算领域中的应用" data-paginate="true" data-theme="gaia" data-style="section a {
+    font-size: 100px;
+}
+" lang="en-US" data-marpit-pagination="34" style="--footer:2023-09-16;--header:第七章：Python在材料计算领域中的应用;--paginate:true;--theme:gaia;--style:section a {
+    font-size: 100px;
+}
+;" data-marpit-pagination-total="34" data-size="4:3">
+<header>第七章：Python在材料计算领域中的应用</header>
+<footer>2023-09-16</footer>
+</section>
+<script>!function(){"use strict";const t={h1:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"1"},style:"display: block; font-size: 2em; margin-block-start: 0.67em; margin-block-end: 0.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h2:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"2"},style:"display: block; font-size: 1.5em; margin-block-start: 0.83em; margin-block-end: 0.83em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h3:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"3"},style:"display: block; font-size: 1.17em; margin-block-start: 1em; margin-block-end: 1em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h4:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"4"},style:"display: block; margin-block-start: 1.33em; margin-block-end: 1.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h5:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"5"},style:"display: block; font-size: 0.83em; margin-block-start: 1.67em; margin-block-end: 1.67em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},h6:{proto:()=>HTMLHeadingElement,attrs:{role:"heading","aria-level":"6"},style:"display: block; font-size: 0.67em; margin-block-start: 2.33em; margin-block-end: 2.33em; margin-inline-start: 0px; margin-inline-end: 0px; font-weight: bold;"},span:{proto:()=>HTMLSpanElement},pre:{proto:()=>HTMLElement,style:"display: block; font-family: monospace; white-space: pre; margin: 1em 0; --marp-auto-scaling-white-space: pre;"}},e="data-marp-auto-scaling-wrapper",i="data-marp-auto-scaling-svg",n="data-marp-auto-scaling-container";class s extends HTMLElement{container;containerSize;containerObserver;svg;svgComputedStyle;svgPreserveAspectRatio="xMinYMid meet";wrapper;wrapperSize;wrapperObserver;constructor(){super();const t=t=>([e])=>{const{width:i,height:n}=e.contentRect;this[t]={width:i,height:n},this.updateSVGRect()};this.attachShadow({mode:"open"}),this.containerObserver=new ResizeObserver(t("containerSize")),this.wrapperObserver=new ResizeObserver(((...e)=>{t("wrapperSize")(...e),this.flushSvgDisplay()}))}static get observedAttributes(){return["data-downscale-only"]}connectedCallback(){this.shadowRoot.innerHTML=`\n<style>\n  svg[${i}] { display: block; width: 100%; height: auto; vertical-align: top; }\n  span[${n}] { display: table; white-space: var(--marp-auto-scaling-white-space, nowrap); width: max-content; }\n</style>\n<div ${e}>\n  <svg part="svg" ${i}>\n    <foreignObject><span ${n}><slot></slot></span></foreignObject>\n  </svg>\n</div>\n    `.split(/\n\s*/).join(""),this.wrapper=this.shadowRoot.querySelector(`div[${e}]`)??void 0;const t=this.svg;this.svg=this.wrapper?.querySelector(`svg[${i}]`)??void 0,this.svg!==t&&(this.svgComputedStyle=this.svg?window.getComputedStyle(this.svg):void 0),this.container=this.svg?.querySelector(`span[${n}]`)??void 0,this.observe()}disconnectedCallback(){this.svg=void 0,this.svgComputedStyle=void 0,this.wrapper=void 0,this.container=void 0,this.observe()}attributeChangedCallback(){this.observe()}flushSvgDisplay(){const{svg:t}=this;t&&(t.style.display="inline",requestAnimationFrame((()=>{t.style.display=""})))}observe(){this.containerObserver.disconnect(),this.wrapperObserver.disconnect(),this.wrapper&&this.wrapperObserver.observe(this.wrapper),this.container&&this.containerObserver.observe(this.container),this.svgComputedStyle&&this.observeSVGStyle(this.svgComputedStyle)}observeSVGStyle(t){const e=()=>{const i=(()=>{const e=t.getPropertyValue("--preserve-aspect-ratio");if(e)return e.trim();return`x${(({textAlign:t,direction:e})=>{if(t.endsWith("left"))return"Min";if(t.endsWith("right"))return"Max";if("start"===t||"end"===t){let i="rtl"===e;return"end"===t&&(i=!i),i?"Max":"Min"}return"Mid"})(t)}YMid meet`})();i!==this.svgPreserveAspectRatio&&(this.svgPreserveAspectRatio=i,this.updateSVGRect()),t===this.svgComputedStyle&&requestAnimationFrame(e)};e()}updateSVGRect(){let t=Math.ceil(this.containerSize?.width??0);const e=Math.ceil(this.containerSize?.height??0);void 0!==this.dataset.downscaleOnly&&(t=Math.max(t,this.wrapperSize?.width??0));const i=this.svg?.querySelector(":scope > foreignObject");if(i?.setAttribute("width",`${t}`),i?.setAttribute("height",`${e}`),this.svg&&(this.svg.setAttribute("viewBox",`0 0 ${t} ${e}`),this.svg.setAttribute("preserveAspectRatio",this.svgPreserveAspectRatio),this.svg.style.height=t<=0||e<=0?"0":""),this.container){const t=this.svgPreserveAspectRatio.toLowerCase();this.container.style.marginLeft=t.startsWith("xmid")||t.startsWith("xmax")?"auto":"0",this.container.style.marginRight=t.startsWith("xmi")?"auto":"0"}}}const r=(t,{attrs:e={},style:i})=>class extends t{constructor(...t){super(...t);for(const[t,i]of Object.entries(e))this.hasAttribute(t)||this.setAttribute(t,i);this._shadow()}static get observedAttributes(){return["data-auto-scaling"]}connectedCallback(){this._update()}attributeChangedCallback(){this._update()}_shadow(){if(!this.shadowRoot)try{this.attachShadow({mode:"open"})}catch(t){if(!(t instanceof Error&&"NotSupportedError"===t.name))throw t}return this.shadowRoot}_update(){const t=this._shadow();if(t){const e=i?`<style>:host { ${i} }</style>`:"";let n="<slot></slot>";const{autoScaling:s}=this.dataset;if(void 0!==s){n=`<marp-auto-scaling exportparts="svg:auto-scaling" ${"downscale-only"===s?"data-downscale-only":""}>${n}</marp-auto-scaling>`}t.innerHTML=e+n}}};let o;const a=Symbol();let l;const c="marpitSVGPolyfill:setZoomFactor,",d=Symbol(),h=Symbol();const g=()=>{const t="Apple Computer, Inc."===navigator.vendor,e=t?[u]:[],i={then:e=>(t?(async()=>{if(void 0===l){const t=document.createElement("canvas");t.width=10,t.height=10;const e=t.getContext("2d"),i=new Image(10,10),n=new Promise((t=>{i.addEventListener("load",(()=>t()))}));i.crossOrigin="anonymous",i.src="data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2210%22%20height%3D%2210%22%20viewBox%3D%220%200%201%201%22%3E%3CforeignObject%20width%3D%221%22%20height%3D%221%22%20requiredExtensions%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%3E%3Cdiv%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxhtml%22%20style%3D%22width%3A%201px%3B%20height%3A%201px%3B%20background%3A%20red%3B%20position%3A%20relative%22%3E%3C%2Fdiv%3E%3C%2FforeignObject%3E%3C%2Fsvg%3E",await n,e.drawImage(i,0,0),l=e.getImageData(5,5,1,1).data[3]<128}return l})().then((t=>{null==e||e(t?[u]:[])})):null==e||e([]),i)};return Object.assign(e,i)};let p,m;function u(t){const e="object"==typeof t&&t.target||document,i="object"==typeof t?t.zoom:t;window[h]||(Object.defineProperty(window,h,{configurable:!0,value:!0}),document.body.style.zoom=1.0001,document.body.offsetHeight,document.body.style.zoom=1,window.addEventListener("message",(({data:t,origin:e})=>{if(e===window.origin)try{if(t&&"string"==typeof t&&t.startsWith(c)){const[,e]=t.split(","),i=Number.parseFloat(e);Number.isNaN(i)||(m=i)}}catch(t){console.error(t)}})));let n=!1;Array.from(e.querySelectorAll("svg[data-marpit-svg]"),(t=>{var e,s,r,o;t.style.transform||(t.style.transform="translateZ(0)");const a=i||m||t.currentScale||1;p!==a&&(p=a,n=a);const l=t.getBoundingClientRect(),{length:c}=t.children;for(let i=0;i<c;i+=1){const n=t.children[i];if(n.getScreenCTM){const t=n.getScreenCTM();if(t){const i=null!==(s=null===(e=n.x)||void 0===e?void 0:e.baseVal.value)&&void 0!==s?s:0,c=null!==(o=null===(r=n.y)||void 0===r?void 0:r.baseVal.value)&&void 0!==o?o:0,d=n.children.length;for(let e=0;e<d;e+=1){const s=n.children[e];if("SECTION"===s.tagName){const{style:e}=s;e.transformOrigin||(e.transformOrigin=`${-i}px ${-c}px`),e.transform=`scale(${a}) matrix(${t.a}, ${t.b}, ${t.c}, ${t.d}, ${t.e-l.left}, ${t.f-l.top}) translateZ(0.0001px)`;break}}}}}})),!1!==n&&Array.from(e.querySelectorAll("iframe"),(({contentWindow:t})=>{null==t||t.postMessage(`${c}${n}`,"null"===window.origin?"*":window.origin)}))}function v({once:t=!1,target:e=document}={}){const i=function(t=document){if(t[d])return t[d];let e=!0;const i=()=>{e=!1,delete t[d]};Object.defineProperty(t,d,{configurable:!0,value:i});let n=[],s=!1;(async()=>{try{n=await g()}finally{s=!0}})();const r=()=>{for(const e of n)e({target:t});s&&0===n.length||e&&window.requestAnimationFrame(r)};return r(),i}(e);return t?(i(),()=>{}):i}p=1,m=void 0;const w=Symbol(),b=(e=document)=>{if("undefined"==typeof window)throw new Error("Marp Core's browser script is valid only in browser context.");if(((e=document)=>{const i=window[a];i||customElements.define("marp-auto-scaling",s);for(const n of Object.keys(t)){const s=`marp-${n}`,a=t[n].proto();(o??(o=!!document.createElement("div",{is:"marp-auto-scaling"}).outerHTML.startsWith("<div is"),o))&&a!==HTMLElement?i||customElements.define(s,r(a,{style:t[n].style}),{extends:n}):(i||customElements.define(s,r(HTMLElement,t[n])),e.querySelectorAll(`${n}[is="${s}"]`).forEach((t=>{t.outerHTML=t.outerHTML.replace(new RegExp(`^<${n}`,"i"),`<${s}`).replace(new RegExp(`</${n}>$`,"i"),`</${s}>`)})))}window[a]=!0})(e),e[w])return e[w];const i=v({target:e}),n=()=>{i(),delete e[w]},l=Object.assign(n,{cleanup:n,update:()=>b(e)});return Object.defineProperty(e,w,{configurable:!0,value:l}),l},y=document.currentScript;b(y?y.getRootNode():document)}();
+</script></foreignObject></svg></div><script>/*!! License: https://unpkg.com/@marp-team/marp-cli@4.2.2/lib/bespoke.js.LICENSE.txt */
+!function(){"use strict";function e(e){return e&&e.__esModule&&Object.prototype.hasOwnProperty.call(e,"default")?e.default:e}var t,n,r=(n||(n=1,t={from:function(e,t){var n,r=1===(e.parent||e).nodeType?e.parent||e:document.querySelector(e.parent||e),o=[].filter.call("string"==typeof e.slides?r.querySelectorAll(e.slides):e.slides||r.children,function(e){return"SCRIPT"!==e.nodeName}),a={},i=function(e,t){return(t=t||{}).index=o.indexOf(e),t.slide=e,t},s=function(e,t){a[e]=(a[e]||[]).filter(function(e){return e!==t})},c=function(e,t){return(a[e]||[]).reduce(function(e,n){return e&&!1!==n(t)},!0)},l=function(e,t){o[e]&&(n&&c("deactivate",i(n,t)),n=o[e],c("activate",i(n,t)))},d=function(e,t){var r=o.indexOf(n)+e;c(e>0?"next":"prev",i(n,t))&&l(r,t)},u={off:s,on:function(e,t){return(a[e]||(a[e]=[])).push(t),s.bind(null,e,t)},fire:c,slide:function(e,t){if(!arguments.length)return o.indexOf(n);c("slide",i(o[e],t))&&l(e,t)},next:d.bind(null,1),prev:d.bind(null,-1),parent:r,slides:o,destroy:function(e){c("destroy",i(n,e)),a={}}};return(t||[]).forEach(function(e){e(u)}),n||l(0),u}}),t),o=e(r);const a=document.body,i=(...e)=>history.replaceState(...e),s="",c="presenter",l="next",d=["",c,l],u="bespoke-marp-",f=`data-${u}`,m=(e,{protocol:t,host:n,pathname:r,hash:o}=location)=>{const a=e.toString();return`${t}//${n}${r}${a?"?":""}${a}${o}`},g=()=>a.dataset.bespokeView,p=e=>new URLSearchParams(location.search).get(e),v=(e,t={})=>{const n={location,setter:i,...t},r=new URLSearchParams(n.location.search);for(const t of Object.keys(e)){const n=e[t];"string"==typeof n?r.set(t,n):r.delete(t)}try{n.setter({...window.history.state??{}},"",m(r,n.location))}catch(e){console.error(e)}},h=(()=>{const e="bespoke-marp";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch{return!1}})(),y=e=>{try{return localStorage.getItem(e)}catch{return null}},b=(e,t)=>{try{return localStorage.setItem(e,t),!0}catch{return!1}},w=e=>{try{return localStorage.removeItem(e),!0}catch{return!1}},x=(e,t)=>{const n="aria-hidden";t?e.setAttribute(n,"true"):e.removeAttribute(n)},k=e=>{e.parent.classList.add(`${u}parent`),e.slides.forEach(e=>e.classList.add(`${u}slide`)),e.on("activate",t=>{const n=`${u}active`,r=t.slide,o=r.classList,a=!o.contains(n);if(e.slides.forEach(e=>{e.classList.remove(n),x(e,!0)}),o.add(n),x(r,!1),a){const e=`${n}-ready`;o.add(e),document.body.clientHeight,o.remove(e)}})},$=e=>{let t=0,n=0;Object.defineProperty(e,"fragments",{enumerable:!0,value:e.slides.map(e=>[null,...e.querySelectorAll("[data-marpit-fragment]")])});const r=r=>void 0!==e.fragments[t][n+r],o=(r,o)=>{t=r,n=o,e.fragments.forEach((e,t)=>{e.forEach((e,n)=>{if(null==e)return;const a=t<r||t===r&&n<=o;e.setAttribute(`${f}fragment`,(a?"":"in")+"active");const i=`${f}current-fragment`;t===r&&n===o?e.setAttribute(i,"current"):e.removeAttribute(i)})}),e.fragmentIndex=o;const a={slide:e.slides[r],index:r,fragments:e.fragments[r],fragmentIndex:o};e.fire("fragment",a)};e.on("next",({fragment:a=!0})=>{if(a){if(r(1))return o(t,n+1),!1;const a=t+1;e.fragments[a]&&o(a,0)}else{const r=e.fragments[t].length;if(n+1<r)return o(t,r-1),!1;const a=e.fragments[t+1];a&&o(t+1,a.length-1)}}),e.on("prev",({fragment:a=!0})=>{if(r(-1)&&a)return o(t,n-1),!1;const i=t-1;e.fragments[i]&&o(i,e.fragments[i].length-1)}),e.on("slide",({index:t,fragment:n})=>{let r=0;if(void 0!==n){const o=e.fragments[t];if(o){const{length:e}=o;r=-1===n?e-1:Math.min(Math.max(n,0),e-1)}}o(t,r)}),o(0,0)},E=document,L=()=>!(!E.fullscreenEnabled&&!E.webkitFullscreenEnabled),S=()=>!(!E.fullscreenElement&&!E.webkitFullscreenElement),P=e=>{e.fullscreen=()=>{L()&&(async()=>{S()?(E.exitFullscreen||E.webkitExitFullscreen)?.call(E):((e=E.body)=>{(e.requestFullscreen||e.webkitRequestFullscreen)?.call(e)})()})()},document.addEventListener("keydown",t=>{"f"!==t.key&&"F11"!==t.key||t.altKey||t.ctrlKey||t.metaKey||!L()||(e.fullscreen(),t.preventDefault())})},_=`${u}inactive`,T=(e=2e3)=>({parent:t,fire:n})=>{const r=t.classList,o=e=>n(`marp-${e?"":"in"}active`);let a;const i=()=>{a&&clearTimeout(a),a=setTimeout(()=>{r.add(_),o()},e),r.contains(_)&&(r.remove(_),o(!0))};for(const e of["mousedown","mousemove","touchend"])document.addEventListener(e,i);setTimeout(i,0)},I=["AUDIO","BUTTON","INPUT","SELECT","TEXTAREA","VIDEO"],M=e=>{e.parent.addEventListener("keydown",e=>{if(!e.target)return;const t=e.target;(I.includes(t.nodeName)||"true"===t.contentEditable)&&e.stopPropagation()})},O=e=>{window.addEventListener("load",()=>{for(const t of e.slides){const e=t.querySelector("marp-auto-scaling, [data-auto-scaling], [data-marp-fitting]");t.setAttribute(`${f}load`,e?"":"hideable")}})},A=({interval:e=250}={})=>t=>{document.addEventListener("keydown",e=>{if(" "===e.key&&e.shiftKey)t.prev();else if("ArrowLeft"===e.key||"ArrowUp"===e.key||"PageUp"===e.key)t.prev({fragment:!e.shiftKey});else if(" "!==e.key||e.shiftKey)if("ArrowRight"===e.key||"ArrowDown"===e.key||"PageDown"===e.key)t.next({fragment:!e.shiftKey});else if("End"===e.key)t.slide(t.slides.length-1,{fragment:-1});else{if("Home"!==e.key)return;t.slide(0)}else t.next();e.preventDefault()});let n,r,o=0;t.parent.addEventListener("wheel",a=>{let i=!1;const s=(e,t)=>{e&&(i=i||((e,t)=>((e,t)=>{const n="X"===t?"Width":"Height";return e[`client${n}`]<e[`scroll${n}`]})(e,t)&&((e,t)=>{const{overflow:n}=e,r=e[`overflow${t}`];return"auto"===n||"scroll"===n||"auto"===r||"scroll"===r})(getComputedStyle(e),t))(e,t)),e?.parentElement&&s(e.parentElement,t)};if(0!==a.deltaX&&s(a.target,"X"),0!==a.deltaY&&s(a.target,"Y"),i)return;a.preventDefault();const c=Math.sqrt(a.deltaX**2+a.deltaY**2);if(void 0!==a.wheelDelta){if(void 0===a.webkitForce&&Math.abs(a.wheelDelta)<40)return;if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<4)return}else if(a.deltaMode===a.DOM_DELTA_PIXEL&&c<12)return;r&&clearTimeout(r),r=setTimeout(()=>{n=0},e);const l=Date.now()-o<e,d=c<=n;if(n=c,l||d)return;let u;(a.deltaX>0||a.deltaY>0)&&(u="next"),(a.deltaX<0||a.deltaY<0)&&(u="prev"),u&&(t[u](),o=Date.now())})},C=(e=`.${u}osc`)=>{const t=document.querySelector(e);if(!t)return()=>{};const n=(e,n)=>{t.querySelectorAll(`[${f}osc=${JSON.stringify(e)}]`).forEach(n)};return L()||n("fullscreen",e=>e.style.display="none"),h||n("presenter",e=>{e.disabled=!0,e.title="Presenter view is disabled due to restricted localStorage."}),e=>{t.addEventListener("click",t=>{if(t.target instanceof HTMLElement){const{bespokeMarpOsc:n}=t.target.dataset;n&&t.target.blur();const r={fragment:!t.shiftKey};"next"===n?e.next(r):"prev"===n?e.prev(r):"fullscreen"===n?e?.fullscreen():"presenter"===n&&e.openPresenterView()}}),e.parent.appendChild(t),e.on("activate",({index:t})=>{n("page",n=>n.textContent=`Page ${t+1} of ${e.slides.length}`)}),e.on("fragment",({index:t,fragments:r,fragmentIndex:o})=>{n("prev",e=>e.disabled=0===t&&0===o),n("next",n=>n.disabled=t===e.slides.length-1&&o===r.length-1)}),e.on("marp-active",()=>x(t,!1)),e.on("marp-inactive",()=>x(t,!0)),L()&&(e=>{for(const t of["","webkit"])E.addEventListener(t+"fullscreenchange",e)})(()=>n("fullscreen",e=>e.classList.toggle("exit",L()&&S())))}},D=e=>{window.addEventListener("message",t=>{if(t.origin!==window.origin)return;const[n,r]=t.data.split(":");if("navigate"===n){const[t,n]=r.split(",");let o=Number.parseInt(t,10),a=Number.parseInt(n,10)+1;a>=e.fragments[o].length&&(o+=1,a=0),e.slide(o,{fragment:a})}})};var N,B,q,K,F,j,V,U={exports:{}},X=(N||(N=1,U.exports=(B=["area","base","br","col","command","embed","hr","img","input","keygen","link","meta","param","source","track","wbr"],q=function(e){return String(e).replace(/[&<>"']/g,function(e){return"&"+K[e]+";"})},K={"&":"amp","<":"lt",">":"gt",'"':"quot","'":"apos"},F="dangerouslySetInnerHTML",j={className:"class",htmlFor:"for"},V={},function(e,t){var n=[],r="";t=t||{};for(var o=arguments.length;o-- >2;)n.push(arguments[o]);if("function"==typeof e)return t.children=n.reverse(),e(t);if(e){if(r+="<"+e,t)for(var a in t)!1!==t[a]&&null!=t[a]&&a!==F&&(r+=" "+(j[a]?j[a]:q(a))+'="'+q(t[a])+'"');r+=">"}if(-1===B.indexOf(e)){if(t[F])r+=t[F].__html;else for(;n.length;){var i=n.pop();if(i)if(i.pop)for(var s=i.length;s--;)n.push(i[s]);else r+=!0===V[i]?i:q(i)}r+=e?"</"+e+">":""}return V[r]=!0,r})),U.exports),H=e(X);const R=({children:e})=>H(null,null,...e),W=`${u}presenter-`,J={container:`${W}container`,dragbar:`${W}dragbar-container`,next:`${W}next`,nextContainer:`${W}next-container`,noteContainer:`${W}note-container`,noteWrapper:`${W}note-wrapper`,noteButtons:`${W}note-buttons`,infoContainer:`${W}info-container`,infoPage:`${W}info-page`,infoPageText:`${W}info-page-text`,infoPagePrev:`${W}info-page-prev`,infoPageNext:`${W}info-page-next`,noteButtonsBigger:`${W}note-bigger`,noteButtonsSmaller:`${W}note-smaller`,infoTime:`${W}info-time`,infoTimer:`${W}info-timer`},Y=e=>{const{title:t}=document;document.title="[Presenter view]"+(t?` - ${t}`:"");const n={},r=e=>(n[e]=n[e]||document.querySelector(`.${e}`),n[e]);document.body.appendChild((e=>{const t=document.createElement("div");return t.className=J.container,t.appendChild(e),t.insertAdjacentHTML("beforeend",H(R,null,H("div",{class:J.nextContainer},H("iframe",{class:J.next,src:"?view=next"})),H("div",{class:J.dragbar}),H("div",{class:J.noteContainer},H("div",{class:J.noteWrapper}),H("div",{class:J.noteButtons},H("button",{class:J.noteButtonsSmaller,tabindex:"-1",title:"Smaller notes font size"},"Smaller notes font size"),H("button",{class:J.noteButtonsBigger,tabindex:"-1",title:"Bigger notes font size"},"Bigger notes font size"))),H("div",{class:J.infoContainer},H("div",{class:J.infoPage},H("button",{class:J.infoPagePrev,tabindex:"-1",title:"Previous"},"Previous"),H("span",{class:J.infoPageText}),H("button",{class:J.infoPageNext,tabindex:"-1",title:"Next"},"Next")),H("time",{class:J.infoTime,title:"Current time"}),H("time",{class:J.infoTimer,title:"Timer"})))),t})(e.parent)),(e=>{let t=!1;r(J.dragbar).addEventListener("mousedown",()=>{t=!0,r(J.dragbar).classList.add("active")}),window.addEventListener("mouseup",()=>{t=!1,r(J.dragbar).classList.remove("active")}),window.addEventListener("mousemove",e=>{if(!t)return;const n=e.clientX/document.documentElement.clientWidth*100;r(J.container).style.setProperty("--bespoke-marp-presenter-split-ratio",`${Math.max(0,Math.min(100,n))}%`)}),r(J.nextContainer).addEventListener("click",()=>e.next());const n=r(J.next),o=(a=n,(e,t)=>a.contentWindow?.postMessage(`navigate:${e},${t}`,"null"===window.origin?"*":window.origin));var a;n.addEventListener("load",()=>{r(J.nextContainer).classList.add("active"),o(e.slide(),e.fragmentIndex),e.on("fragment",({index:e,fragmentIndex:t})=>o(e,t))});const i=document.querySelectorAll(".bespoke-marp-note");i.forEach(e=>{e.addEventListener("keydown",e=>e.stopPropagation()),r(J.noteWrapper).appendChild(e)}),e.on("activate",()=>i.forEach(t=>t.classList.toggle("active",t.dataset.index==e.slide())));let s=0;const c=e=>{s=Math.max(-5,s+e),r(J.noteContainer).style.setProperty("--bespoke-marp-note-font-scale",(1.2**s).toFixed(4))},l=()=>c(1),d=()=>c(-1),u=r(J.noteButtonsBigger),f=r(J.noteButtonsSmaller);u.addEventListener("click",()=>{u.blur(),l()}),f.addEventListener("click",()=>{f.blur(),d()}),document.addEventListener("keydown",e=>{"+"===e.key&&l(),"-"===e.key&&d()},!0),e.on("activate",({index:t})=>{r(J.infoPageText).textContent=`${t+1} / ${e.slides.length}`});const m=r(J.infoPagePrev),g=r(J.infoPageNext);m.addEventListener("click",t=>{m.blur(),e.prev({fragment:!t.shiftKey})}),g.addEventListener("click",t=>{g.blur(),e.next({fragment:!t.shiftKey})}),e.on("fragment",({index:t,fragments:n,fragmentIndex:r})=>{m.disabled=0===t&&0===r,g.disabled=t===e.slides.length-1&&r===n.length-1});let p=new Date;const v=()=>{const e=new Date,t=e=>`${Math.floor(e)}`.padStart(2,"0"),n=e.getTime()-p.getTime(),o=t(n/1e3%60),a=t(n/1e3/60%60),i=t(n/36e5%24);r(J.infoTime).textContent=e.toLocaleTimeString(),r(J.infoTimer).textContent=`${i}:${a}:${o}`};v(),setInterval(v,250),r(J.infoTimer).addEventListener("click",()=>{p=new Date})})(e)},z=e=>{if(!(e=>e.syncKey&&"string"==typeof e.syncKey)(e))throw new Error("The current instance of Bespoke.js is invalid for Marp bespoke presenter plugin.");Object.defineProperties(e,{openPresenterView:{enumerable:!0,value:G},presenterUrl:{enumerable:!0,get:Q}}),h&&document.addEventListener("keydown",t=>{"p"!==t.key||t.altKey||t.ctrlKey||t.metaKey||(t.preventDefault(),e.openPresenterView())})};function G(){const{max:e,floor:t}=Math,n=e(t(.85*window.innerWidth),640),r=e(t(.85*window.innerHeight),360);return window.open(this.presenterUrl,W+this.syncKey,`width=${n},height=${r},menubar=no,toolbar=no`)}function Q(){const e=new URLSearchParams(location.search);return e.set("view","presenter"),e.set("sync",this.syncKey),m(e)}const Z=e=>{const t=g();return t===l&&e.appendChild(document.createElement("span")),{[s]:z,[c]:Y,[l]:D}[t]},ee=e=>{e.on("activate",t=>{document.querySelectorAll(".bespoke-progress-parent > .bespoke-progress-bar").forEach(n=>{n.style.flexBasis=100*t.index/(e.slides.length-1)+"%"})})},te=e=>{const t=Number.parseInt(e,10);return Number.isNaN(t)?null:t},ne=(e={})=>{const t={history:!0,...e};return e=>{let n=!0;const r=e=>{const t=n;try{return n=!0,e()}finally{n=t}},o=(t={fragment:!0})=>{let n=t.fragment?te(p("f")||""):null;((t,n)=>{const{min:r,max:o}=Math,{fragments:a,slides:i}=e,s=o(0,r(t,i.length-1)),c=o(0,r(n||0,a[s].length-1));s===e.slide()&&c===e.fragmentIndex||e.slide(s,{fragment:c})})((()=>{if(location.hash){const[t]=location.hash.slice(1).split(":~:");if(/^\d+$/.test(t))return(te(t)??1)-1;const r=document.getElementById(t)||document.querySelector(`a[name="${CSS.escape(t)}"]`);if(r){const{length:t}=e.slides;for(let o=0;o<t;o+=1)if(e.slides[o].contains(r)){const t=e.fragments?.[o],a=r.closest("[data-marpit-fragment]");if(t&&a){const e=t.indexOf(a);e>=0&&(n=e)}return o}}}return 0})(),n)};e.on("fragment",({index:e,fragmentIndex:r})=>{n||v({f:0===r||r.toString()},{location:{...location,hash:`#${e+1}`},setter:(...e)=>t.history?history.pushState(...e):history.replaceState(...e)})}),setTimeout(()=>{o(),window.addEventListener("hashchange",()=>r(()=>{o({fragment:!1}),v({f:void 0})})),window.addEventListener("popstate",()=>{n||r(()=>o())}),n=!1},0)}},re=(e={})=>{const t=e.key||window.history.state?.marpBespokeSyncKey||Math.random().toString(36).slice(2),n=`bespoke-marp-sync-${t}`;var r;r={marpBespokeSyncKey:t},v({},{setter:(e,...t)=>i({...e,...r},...t)});const o=()=>{const e=y(n);return e?JSON.parse(e):Object.create(null)},a=e=>{const t=o(),r={...t,...e(t)};return b(n,JSON.stringify(r)),r},s=()=>{window.removeEventListener("pageshow",s),a(e=>({reference:(e.reference||0)+1}))};return e=>{s(),Object.defineProperty(e,"syncKey",{value:t,enumerable:!0});let r=!0;setTimeout(()=>{e.on("fragment",e=>{r&&a(()=>({index:e.index,fragmentIndex:e.fragmentIndex}))})},0),window.addEventListener("storage",t=>{if(t.key===n&&t.oldValue&&t.newValue){const n=JSON.parse(t.oldValue),o=JSON.parse(t.newValue);if(n.index!==o.index||n.fragmentIndex!==o.fragmentIndex)try{r=!1,e.slide(o.index,{fragment:o.fragmentIndex,forSync:!0})}finally{r=!0}}});const i=()=>{const{reference:e}=o();void 0===e||e<=1?w(n):a(()=>({reference:e-1}))};window.addEventListener("pagehide",e=>{e.persisted&&window.addEventListener("pageshow",s),i()}),e.on("destroy",i)}},{PI:oe,abs:ae,sqrt:ie,atan2:se}=Math,ce={passive:!0},le=({slope:e=-.7,swipeThreshold:t=30}={})=>n=>{let r;const o=n.parent,a=e=>{const t=o.getBoundingClientRect();return{x:e.pageX-(t.left+t.right)/2,y:e.pageY-(t.top+t.bottom)/2}};o.addEventListener("touchstart",({touches:e})=>{r=1===e.length?a(e[0]):void 0},ce),o.addEventListener("touchmove",e=>{if(r)if(1===e.touches.length){e.preventDefault();const t=a(e.touches[0]),n=t.x-r.x,o=t.y-r.y;r.delta=ie(ae(n)**2+ae(o)**2),r.radian=se(n,o)}else r=void 0}),o.addEventListener("touchend",o=>{if(r){if(r.delta&&r.delta>=t&&r.radian){const t=(r.radian-e+oe)%(2*oe)-oe;n[t<0?"next":"prev"](),o.stopPropagation()}r=void 0}},ce)},de=new Map;de.clear(),de.set("none",{backward:{both:void 0,incoming:void 0,outgoing:void 0},forward:{both:void 0,incoming:void 0,outgoing:void 0}});const ue={both:"",outgoing:"outgoing-",incoming:"incoming-"},fe={forward:"",backward:"-backward"},me=e=>`--marp-bespoke-transition-animation-${e}`,ge=e=>`--marp-transition-${e}`,pe=me("name"),ve=me("duration"),he=e=>new Promise(t=>{const n={},r=document.createElement("div"),o=e=>{r.remove(),t(e)};r.addEventListener("animationstart",()=>o(n)),Object.assign(r.style,{animationName:e,animationDuration:"1s",animationFillMode:"both",animationPlayState:"paused",position:"absolute",pointerEvents:"none"}),document.body.appendChild(r);const a=getComputedStyle(r).getPropertyValue(ge("duration"));a&&Number.parseFloat(a)>=0&&(n.defaultDuration=a),((e,t)=>{requestAnimationFrame(()=>{e.style.animationPlayState="running",requestAnimationFrame(()=>t(void 0))})})(r,o)}),ye=async e=>de.has(e)?de.get(e):(e=>{const t={},n=[];for(const[r,o]of Object.entries(ue))for(const[a,i]of Object.entries(fe)){const s=`marp-${o}transition${i}-${e}`;n.push(he(s).then(e=>{t[a]=t[a]||{},t[a][r]=e?{...e,name:s}:void 0}))}return Promise.all(n).then(()=>t)})(e).then(t=>(de.set(e,t),t)),be=e=>Object.values(e).flatMap(Object.values).every(e=>!e),we=(e,{type:t,backward:n})=>{const r=e[n?"backward":"forward"],o=(()=>{const e=r[t],n=e=>({[pe]:e.name});if(e)return n(e);if(r.both){const e=n(r.both);return"incoming"===t&&(e[me("direction")]="reverse"),e}})();return!o&&n?we(e,{type:t,backward:!1}):o||{[pe]:"__bespoke_marp_transition_no_animation__"}},xe=e=>{if(e)try{const t=JSON.parse(e);if((e=>{if("object"!=typeof e)return!1;const t=e;return"string"==typeof t.name&&(void 0===t.duration||"string"==typeof t.duration)})(t))return t}catch{}},ke="_tSId",$e="_tA",Ee="bespoke-marp-transition-warming-up",Le=window.matchMedia("(prefers-reduced-motion: reduce)"),Se="__bespoke_marp_transition_reduced_outgoing__",Pe="__bespoke_marp_transition_reduced_incoming__",_e={forward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}},backward:{both:void 0,incoming:{name:Pe},outgoing:{name:Se}}},Te=e=>{if(!document.startViewTransition)return;const t=t=>(void 0!==t&&(e._tD=t),e._tD);let n;t(!1),((...e)=>{CSS.registerProperty({name:ge("duration"),syntax:"<time>",inherits:!0,initialValue:"-1s"});const t=[...new Set(e).values()];return Promise.all(t.map(e=>ye(e))).then()})(...Array.from(document.querySelectorAll("section[data-transition], section[data-transition-back]")).flatMap(e=>[e.dataset.transition,e.dataset.transitionBack].flatMap(e=>{const t=xe(e);return[t?.name,t?.builtinFallback?`__builtin__${t.name}`:void 0]}).filter(e=>!!e))).then(()=>{document.querySelectorAll("style").forEach(e=>{e.innerHTML=e.innerHTML.replace(/--marp-transition-duration:[^;}]*[;}]/g,e=>e.slice(0,-1)+"!important"+e.slice(-1))})});const r=(n,{back:r,cond:o})=>a=>{const i=t();if(i)return!!a[$e]||!("object"!=typeof i||(i.skipTransition(),!a.forSync));if(!o(a))return!0;const s=e.slides[e.slide()],c=()=>a.back??r,l="data-transition"+(c()?"-back":""),d=s.querySelector(`section[${l}]`);if(!d)return!0;const u=xe(d.getAttribute(l)??void 0);return!u||((async(e,{builtinFallback:t=!0}={})=>{let n=await ye(e);if(be(n)){if(!t)return;return n=await ye(`__builtin__${e}`),be(n)?void 0:n}return n})(u.name,{builtinFallback:u.builtinFallback}).then(e=>{if(!e){t(!0);try{n(a)}finally{t(!1)}return}let r=e;Le.matches&&(console.warn("Use a constant animation to transition because preferring reduced motion by viewer has detected."),r=_e);const o=document.getElementById(ke);o&&o.remove();const i=document.createElement("style");i.id=ke,document.head.appendChild(i),((e,t)=>{const n=[`:root{${ge("direction")}:${t.backward?-1:1};}`,":root:has(.bespoke-marp-inactive){cursor:none;}"],r=t=>{const n=e[t].both?.defaultDuration||e[t].outgoing?.defaultDuration||e[t].incoming?.defaultDuration;return"forward"===t?n:n||r("forward")},o=t.duration||r(t.backward?"backward":"forward");void 0!==o&&n.push(`::view-transition-group(*){${ve}:${o};}`);const a=e=>Object.entries(e).map(([e,t])=>`${e}:${t};`).join("");return n.push(`::view-transition-old(root){${a(we(e,{...t,type:"outgoing"}))}}`,`::view-transition-new(root){${a(we(e,{...t,type:"incoming"}))}}`),n})(r,{backward:c(),duration:u.duration}).forEach(e=>i.sheet?.insertRule(e));const s=document.documentElement.classList;s.add(Ee);let l=!1;const d=()=>{l||(n(a),l=!0,s.remove(Ee))},f=()=>{t(!1),i.remove(),s.remove(Ee)};try{t(!0);const e=document.startViewTransition(d);t(e),e.finished.finally(f)}catch(e){console.error(e),d(),f()}}),!1)};e.on("prev",r(t=>e.prev({...t,[$e]:!0}),{back:!0,cond:e=>e.index>0&&!((e.fragment??1)&&n.fragmentIndex>0)})),e.on("next",r(t=>e.next({...t,[$e]:!0}),{cond:t=>t.index+1<e.slides.length&&!(n.fragmentIndex+1<n.fragments.length)})),setTimeout(()=>{e.on("slide",r(t=>e.slide(t.index,{...t,[$e]:!0}),{cond:t=>{const n=e.slide();return t.index!==n&&(t.back=t.index<n,!0)}}))},0),e.on("fragment",e=>{n=e})};let Ie;const Me=()=>(void 0===Ie&&(Ie="wakeLock"in navigator&&navigator.wakeLock),Ie),Oe=async()=>{const e=Me();if(e)try{return await e.request("screen")}catch(e){console.warn(e)}return null},Ae=async()=>{if(!Me())return;let e;const t=()=>{e&&"visible"===document.visibilityState&&Oe()};for(const e of["visibilitychange","fullscreenchange"])document.addEventListener(e,t);return e=await Oe(),e};((e=document.getElementById(":$p"))=>{(()=>{const e=p("view");a.dataset.bespokeView=e===l||e===c?e:""})();const t=(e=>{const t=p(e);return v({[e]:void 0}),t})("sync")||void 0;o.from(e,((...e)=>{const t=d.findIndex(e=>g()===e);return e.map(([e,n])=>e[t]&&n).filter(e=>e)})([[1,1,0],re({key:t})],[[1,1,1],Z(e)],[[1,1,0],M],[[1,1,1],k],[[1,0,0],T()],[[1,1,1],O],[[1,1,1],ne({history:!1})],[[1,1,0],A()],[[1,1,0],P],[[1,0,0],ee],[[1,1,0],le()],[[1,0,0],C()],[[1,0,0],Te],[[1,1,1],$],[[1,1,0],Ae]))})()}();</script></body></html>
