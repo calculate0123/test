@@ -145,7 +145,7 @@ $$\frac{\partial \mathbf{u}}{\partial t} + (\mathbf{u} \cdot \nabla) \mathbf{u} 
 
 Navier-Stokes（NS）方程组 （强制对流）
 
-![bg](flow_velocity.fr_FR.png)
+![bg](../figs/flow_velocity.fr_FR.png)
 
 
 </font> 
@@ -160,8 +160,8 @@ Navier-Stokes（NS）方程组 （强制对流）
 Navier-Stokes（NS）方程组
 (湍流和圆柱绕流)
 
-![height:250](R-C.png)
-![height:220](Untitled-1024x679.png) ![height:220](<R-C (1).png>)  
+![height:250](../figs/R-C.png)
+![height:220](../figs/Untitled-1024x679.png) ![height:220](<../figs/R-C (1).png>)  
 
 </font> 
 
@@ -177,7 +177,7 @@ Navier-Stokes（NS）方程组
 (The Navier Stokes equations are solved on a three-dimensional grid over the globe.The global model (black) has a 60km grid spacing, the European model (green) 20km
 and the UK model (red) 12km.)
 
-![height:280](<The Navier Stokes equations are solved on a three-dimensional grid over the globe..jpg>) ![height:280](13408_2.jpg)
+![height:280](<../figs/The Navier Stokes equations are solved on a three-dimensional grid over the globe..jpg>) ![height:280](../figs/13408_2.jpg)
 
 </font> 
 
@@ -212,7 +212,7 @@ $$i\hbar\frac{\partial\psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\psi + V\ps
 <font size=4>
 
 
-![bg](<The Schrődinger equation allows us to picture orbitals in a Hydrogen Atom.png>)
+![bg](<../figs/The Schrődinger equation allows us to picture orbitals in a Hydrogen Atom.png>)
 
 </font> 
 
@@ -250,7 +250,7 @@ Kohn-Sham方程通过引入虚拟波函数和自洽场的迭代过程，将多�
 DFT calculations results a The H adsorption energy for Pt, Os, and Os with different doping configurations. 
 
 
-![Alt text](DFT-calculations-results-a-The-H-adsorption-energy-for-Pt-Os-and-Os-with-different_W640.jpg)
+![Alt text](../figs/DFT-calculations-results-a-The-H-adsorption-energy-for-Pt-Os-and-Os-with-different_W640.jpg)
 
 </font> 
 
@@ -271,7 +271,7 @@ DFT calculations results a The H adsorption energy for Pt, Os, and Os with diffe
 
 `离散化空间和时间`：将问题的空间域和时间域分割为离散的网格点。这通常涉及选择`网格的间距`或`时间步长`。
 
-![height:210](ss.JPG)  ![height:210](cfd-simulation-image-take-sb-640x360_tcm60-84389.jpg)
+![height:210](../figs/ss.JPG)  ![height:210](../figs/cfd-simulation-image-take-sb-640x360_tcm60-84389.jpg)
 
 </font> 
 
@@ -346,7 +346,7 @@ $$\frac{dy}{dt} \approx \frac{y_{n+1} - y_n}{\Delta t}$$
 
 3. 中心差分：$D_cf\left(x_{j}\right)=\frac{f\left(x_{j+1}\right)-f\left(x_{j-1}\right)}{x_{j+1}-x_{j-1}}$,$f^{\prime}\left(x_{j}\right)=D_cf\left(x_{j}\right)+O\left(\Delta x^2\right)$ 具有`二阶`精度
 
-![width:700](<20.02.01-Finite-difference (1).png>)
+![width:700](<../figs/20.02.01-Finite-difference (1).png>)
 
 
 </font> 
@@ -482,7 +482,7 @@ $$\frac{u(x, t + \Delta t) - u(x, t)}{\Delta t} = \alpha \frac{u(x + \Delta x, t
 
 <center>
 
-![width:500](1.JPG)
+![width:500](../figs/1.JPG)
 
 </center>
 
@@ -546,7 +546,7 @@ $$
 
 **深度学习求解微分方程基本框架**
 
-![width:600](<深度学习求解微分方程基本框架 .PNG>)
+![width:600](<../figs/深度学习求解微分方程基本框架 .PNG>)
 
 </center> 
 
@@ -569,7 +569,7 @@ $$
 **反问题**是指参数$λ$ 未知，利用有限的观测数据反推出最佳的参数$λ$。
 
 
-![bg right width:400 40%](<深度学习求解微分方程基本框架 .PNG>)
+![bg right width:400 40%](<../figs/深度学习求解微分方程基本框架 .PNG>)
 
 
 </font> 
@@ -725,7 +725,7 @@ plt.show()  # 显示图形
 
 ```
 
-![width:300](dba985fb564145de8fa354ac3c8dc52e.png)
+![width:300](../figs/dba985fb564145de8fa354ac3c8dc52e.png)
 
 </font> 
 
@@ -889,7 +889,7 @@ plt.show()
 
 <font size=4>
 
-![width:650](Figure_2.png)
+![width:650](../figs/Figure_2.png)
 
 </font> 
 
@@ -903,7 +903,7 @@ plt.show()
 
 ROBER problem
 
-![width:600](1-2.png)
+![width:600](../figs/1-2.png)
 
 
 </font> 
@@ -917,7 +917,7 @@ ROBER problem
 
 核反应堆动力学的点动力学方程
 
-![width:700](<Schematic of the X-TFC algorithm to solve the Point Kinetics Equations.PNG>)
+![width:700](<../figs/Schematic of the X-TFC algorithm to solve the Point Kinetics Equations.PNG>)
 
 Annals of Nuclear Energy 167 (2022) 108833 
 
@@ -933,7 +933,7 @@ Annals of Nuclear Energy 167 (2022) 108833
 
 催化CO2甲烷化反应器模型的求解和参数识别神经网络
 
-![width:700](<Architecture of the physics-informed neural network (PINN) forward problem for CO2 methanation in an isothermal fixed-bed (IFB) reactor.PNG>) 
+![width:700](<../figs/Architecture of the physics-informed neural network (PINN) forward problem for CO2 methanation in an isothermal fixed-bed (IFB) reactor.PNG>) 
 
 
 </font> 
@@ -954,7 +954,7 @@ Annals of Nuclear Energy 167 (2022) 108833
 $\frac{\partial u}{\partial t}+u \frac{\partial u}{\partial x}=v \frac{\partial^{2} u}{\partial x^{2}}$
 </font> 
 
-![width:500](6.17-1.png)
+![width:500](../figs/6.17-1.png)
 
 
 ---
@@ -965,7 +965,7 @@ $\frac{\partial u}{\partial t}+u \frac{\partial u}{\partial x}=v \frac{\partial^
 <font size=4>
 综合考虑边界条件和初始条件：
 
-![width:700](6.22.JPG)
+![width:700](../figs/6.22.JPG)
 
 </font> 
 
@@ -984,7 +984,7 @@ $$\frac{\partial u}{\partial t}+u \frac{\partial u}{\partial x}=\nu \frac{\parti
 
 **算例3**： 
 
-![Alt text](2.JPG)
+![Alt text](../figs/2.JPG)
 
 
 </font> 
@@ -1151,7 +1151,7 @@ plt.show()
 
 <font size=5> 
 
-![Alt text](2-2.png)
+![Alt text](../figs/2-2.png)
 
 </font> 
 
@@ -1165,7 +1165,7 @@ plt.show()
 <font size=5> 
 电力系统动力学求解
 
-![width:800](6.18.png)
+![width:800](../figs/6.18.png)
 
 
 </font> 
@@ -1179,7 +1179,7 @@ plt.show()
 金属表面声波裂缝检测
 
 
-![width:850](6.19.png)
+![width:850](../figs/6.19.png)
 
 </font> 
 
@@ -1192,7 +1192,7 @@ plt.show()
 <font size=5> 
 不可压NS方程求解
 
-![Alt text](6.20.png)
+![Alt text](../figs/6.20.png)
 
 </font> 
 
@@ -1205,7 +1205,7 @@ plt.show()
 <font size=3> 
 
 预测植物细胞的水分浓度
-![width:850](6.19.JPG)
+![width:850](../figs/6.19.JPG)
 
 
 </font> 
@@ -1219,7 +1219,7 @@ plt.show()
 
 虚拟热传感器代理模型与实时仿真
 
-![width:850](7.20.JPG)
+![width:850](../figs/7.20.JPG)
 
 </font> 
 
@@ -1232,7 +1232,7 @@ plt.show()
 
 盾构隧道诱发地表沉降预测
 
-![width:850](<R-C (1).jpg>)
+![width:850](<../figs/R-C (1).jpg>)
 
 </font> 
 
@@ -1246,7 +1246,7 @@ plt.show()
 
 线性弹性问题
 
-![width:850](6.21.png)
+![width:850](../figs/6.21.png)
 
 </font> 
 
@@ -1259,7 +1259,7 @@ plt.show()
 
 准脆性材料断裂计算机器学习模型
 
-![width:850](6.21.JPG)
+![width:850](../figs/6.21.JPG)
 
 </font> 
 
@@ -1273,7 +1273,7 @@ plt.show()
 
 定向能沉积中晶粒结构特征的预测
 
-![width:850](6.24.JPG)
+![width:850](../figs/6.24.JPG)
 
 </font> 
 
@@ -1287,7 +1287,7 @@ plt.show()
 
 材料中的逆传热问题
 
-![width:850](6.23.JPG)
+![width:850](../figs/6.23.JPG)
 
 </font> 
 
@@ -1303,7 +1303,7 @@ plt.show()
 基于偏微分方程求解光子学反问题的PINN原理图
 
 
-![height:400](a-Schematic-of-a-PINN-for-solving-inverse-problem-in-photonics-based-on-partial_W640.jpg)  ![height:400](a-FEM-simulation-of-electric-field-real-part-distribution-profile-for-square-lattice_W640.jpg)
+![height:400](../figs/a-Schematic-of-a-PINN-for-solving-inverse-problem-in-photonics-based-on-partial_W640.jpg)  ![height:400](../figs/a-FEM-simulation-of-electric-field-real-part-distribution-profile-for-square-lattice_W640.jpg)
 
 
 </font> 
