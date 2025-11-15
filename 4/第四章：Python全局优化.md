@@ -89,9 +89,9 @@ style: |
 
 局部优化和全局优化的区别：
 
-![Alt text](7.JPG)
+![Alt text](../figs/7.JPG)
 
-![bg right width: 300](8.jpeg)
+![bg right width: 300](../figs/8.jpeg)
 
 </font>
 
@@ -125,7 +125,7 @@ style: |
 
 局部优化/全局优化和方程求根的转化：
 
-![Alt text](10-1.gif)
+![Alt text](../figs/10-1.gif)
 
 </font>
 
@@ -169,7 +169,7 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 \end{align}$$
 牛顿法假设  $x_{n}$  是对方程 f(x) = 0 的解的一个近似. 如果令 $x_{n+1}$ = $x_{n}$ - f($x_{n}$)/f′($x_{n}$). 则在很多情况下, $x_{n+1}$ 是个比 $x_{n}$ 更好的近似. 
 
-![bg right width:500](9.gif)
+![bg right width:500](../figs/9.gif)
 
 </font>
 
@@ -181,9 +181,9 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 
 <font size=5>
 
-![bg right width:400](11.gif)
+![bg right width:400](../figs/11.gif)
 
-![Alt text](12.gif)
+![Alt text](../figs/12.gif)
 
 </font>
 
@@ -236,7 +236,7 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 
 <font size=4>
 
-![width:500](13.gif)
+![width:500](../figs/13.gif)
 
 
 </font>
@@ -249,7 +249,7 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 
 <font size=4>
 
-![width:850](16.gif)
+![width:850](../figs/16.gif)
 
 </font>
 
@@ -344,7 +344,7 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 
 **模拟退火算法**（Simulated Annealing，SA）是一种**启发式算法(利用问题拥有的启发信息来引导搜索，达到减少搜索范围、降低问题复杂度的目的)**，由S.Kirkpatrick, C.D.Gelatt和M.P.Vecchi在1983年所发明的，V.Čern在1985年也独立发明此演算法。
 
-模拟退火算法用于解决**组合优化问题**和**全局优化问题**。模拟退火算法基本思想 **爬山法**是一种贪婪的方法，对于一个优化问题，其大致图像如右图所示。其目标是要找到函数的最大值，若初始化时，初始点的位置在C处，则会寻找到附近的局部最大值A点处，由于A点出是一个局部最大值点，故对于**爬山法**来讲，该算法无法跳出局部最大值点。若初始点选择在D处，根据**爬山法**，则会找到全部最大值点B。这一点也说明了这样基于贪婪的爬山法是否能够取得全局最优解与初始值的选取由很大的关系。 ![bg right width:600](<F046MR (1).png>)
+模拟退火算法用于解决**组合优化问题**和**全局优化问题**。模拟退火算法基本思想 **爬山法**是一种贪婪的方法，对于一个优化问题，其大致图像如右图所示。其目标是要找到函数的最大值，若初始化时，初始点的位置在C处，则会寻找到附近的局部最大值A点处，由于A点出是一个局部最大值点，故对于**爬山法**来讲，该算法无法跳出局部最大值点。若初始点选择在D处，根据**爬山法**，则会找到全部最大值点B。这一点也说明了这样基于贪婪的爬山法是否能够取得全局最优解与初始值的选取由很大的关系。 ![bg right width:600](<../figs/F046MR (1).png>)
 
 
 </font>
@@ -366,7 +366,7 @@ x_{n+1} &= x_n - \frac{f(x_n)}{f'(x_n)}
 **模拟退火算法**从某一较高的温度出发，这个温度称为初始温度，伴随着温度参数的不断下降，算法中的解趋于稳定，但是，可能这样的稳定解是一个局部最优解，此时，模拟退火算法中会以一定的概率跳出这样的局部最优解，以寻找目标函数的全局最优解。如上图中所示，若此时寻找到了A点处的解，模拟退火算法会以一定的概率跳出这个解，如跳到了D点重新寻找，这样在一定程度上增加了寻找到全局最优解的可能性。
 
 
-![width:400](13.gif)
+![width:400](../figs/13.gif)
 
 
 </font>
@@ -452,7 +452,7 @@ $$ P_n = exp(-\frac{ΔE_n}{kT})$$
 | 7. 最优解收集         | 在搜索过程中记录每个温度下的最优解，选择最佳解作为输出。   |
 
 
-![bg right width:500](F05AoT.png)
+![bg right width:500](../figs/F05AoT.png)
 
 </font>
 
@@ -594,7 +594,7 @@ pip install scikit-opt
 
 $$y = x \cdot \sin(10 \pi x) + 2.0$$
 
-![width:500](0.jpeg)
+![width:500](../figs/0.jpeg)
 
 </font>
 
@@ -660,7 +660,7 @@ plt.show()
 <font size=4>
 最优函数值的收敛图: 随机生成一个初始解！
 
-![Alt text](1.jpeg)
+![Alt text](../figs/1.jpeg)
 </font>
 
 
@@ -733,7 +733,7 @@ plt.show()
 
 这个过程将导致种群像自然进化一样的后生代种群比前代更加适应于环境，末代种群中的最优个体经过解码（decoding），可以作为问题近似最优解。
 
-![bg right width:480](20190927114644478.png)
+![bg right width:480](../figs/20190927114644478.png)
 
 </font>
 
@@ -750,7 +750,7 @@ plt.show()
 求f(x) = $x^2$ 极大值问题，设自变量 x 介于0～31，求其二次函数的最大值，即：max f(x) = $x^2$, x∈ [0, 31]
 
 
-![width:700](a-1.png)
+![width:700](../figs/a-1.png)
 
 </font>
 
@@ -762,20 +762,7 @@ plt.show()
 
 <font size=4>
 
-![width:700](b-1.png)
-
-</font>
-
-
----
-
-
-
-## 4.4 遗传算法
-
-<font size=4>
-
-![width:700](c-2.png)
+![width:700](../figs/b-1.png)
 
 </font>
 
@@ -788,7 +775,7 @@ plt.show()
 
 <font size=4>
 
-![width:700](d-2.png)
+![width:700](../figs/c-2.png)
 
 </font>
 
@@ -801,7 +788,20 @@ plt.show()
 
 <font size=4>
 
-![width:700](e-1.png)
+![width:700](../figs/d-2.png)
+
+</font>
+
+
+---
+
+
+
+## 4.4 遗传算法
+
+<font size=4>
+
+![width:700](../figs/e-1.png)
 
 </font>
 
@@ -874,7 +874,7 @@ plt.show()
 <font size=4>
 最优函数值的收敛图: 随机生成多个初始解！
 
-![Alt text](5.jpeg)
+![Alt text](../figs/5.jpeg)
 </font>
 
 
@@ -886,7 +886,7 @@ plt.show()
 
 <font size=4>
 
-![Alt text](6.jpeg)
+![Alt text](../figs/6.jpeg)
 </font>
 
 
