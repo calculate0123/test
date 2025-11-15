@@ -132,7 +132,7 @@ $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
 
 
-![bg right width:500](newton_1.png)
+![bg right width:500](../figs/newton_1.png)
 
 
 </font>
@@ -589,7 +589,7 @@ $$x_{n+1} = x_n - \frac{f'(x_n)}{f''(x_n)}$$
 
 假设我们有一个包含两个变量的函数f(x,y)如果我们在z=c平面上切割z=f(x,y)曲面，那么我们得到满足f(x,y)=c的所有点的集合，轮廓曲线是在z=c平面上满足f(x,y)=c的点的集合。可认为等高线和**水平集（level set**）是一样的。
 
-![width:600](grad1.png)
+![width:600](../figs/grad1.png)
 
 </font>
 
@@ -685,7 +685,7 @@ Show[
 
 gradient for $f(x, y) = x^2 + y^2$ 
 
-![width:600](grad2.png)
+![width:600](../figs/grad2.png)
 
 </font>
 
@@ -769,9 +769,9 @@ Hessian矩阵的特征值和特征向量提供了函数$f(x)$在不同方向上�
 <font size=4>
 
 
-![width:800](minmaxsaddle.png)
+![width:800](../figs/minmaxsaddle.png)
 
-![width:800](e.png)
+![width:800](../figs/e.png)
 
 </font>
 
@@ -785,7 +785,7 @@ Hessian矩阵的特征值和特征向量提供了函数$f(x)$在不同方向上�
 
 Saddle 简单鞍点  
 
-![width:700](1280px-Minimal_surface_curvature_planes-en.png)
+![width:700](../figs/1280px-Minimal_surface_curvature_planes-en.png)
 
 
 </font>
@@ -799,7 +799,7 @@ Saddle 简单鞍点
 
 复杂鞍点
 
-![width:800](highorder.png)
+![width:800](../figs/highorder.png)
 
 
 </font>
@@ -989,7 +989,7 @@ $$\mathbf{x}_1 = \mathbf{x}_0 - [H(\mathbf{x}_0)]^{-1} \nabla f(\mathbf{x}_0)$$
 
 **拟牛顿法(quasi-newton method)**
 
-![width:600](Two-level-update-strategy-for-quasi-Newton-Raphson-algorithm.png)
+![width:600](../figs/Two-level-update-strategy-for-quasi-Newton-Raphson-algorithm.png)
 
 </font>
 
@@ -1076,7 +1076,7 @@ $$x_{k+1}=x_{k}-\eta_{k} \nabla f\left(x_{k}\right)$$
 
 
 
-![width:500](Kw20F.png)
+![width:500](../figs/Kw20F.png)
 
 
 </font>
@@ -1093,7 +1093,7 @@ $$x_{k+1}=x_{k}-\eta_{k} \nabla f\left(x_{k}\right)$$
 
 梯度下降法(**绿色**)和牛顿法(**红色**)用于最小化函数(小步)的比较。牛顿的方法使用曲率信息(即二阶导数)来采取更直接的路线。
 
-![bg right width:400](521px-Newton_optimization_vs_grad_descent.svg.png)
+![bg right width:400](../figs/521px-Newton_optimization_vs_grad_descent.svg.png)
 
 
 </font>
@@ -1228,7 +1228,7 @@ $$x_{1}=x_{0}-\alpha_{0} \nabla f\left(x_{0}\right)$$
 
 **收敛速度**：最陡下降法在某些情况下可能收敛较慢，因为它沿着梯度最陡峭的方向进行更新，导致多次迭代可能会在一个维度上来回震荡。
 
-![bg right width:500](steepest.png)
+![bg right width:500](../figs/steepest.png)
 
 
 </font>
@@ -1294,7 +1294,7 @@ $$d_{1}^{\top} A d_{0}=-\nabla f\left(x_{1}\right)^{\top} A d_{0}+\beta_{0} d_{0
 
 最陡下降法（Steepest Descent）和共轭梯度法（Conjugate Gradient）搜索方向的对比:
 
-![Alt text](Search-paths-of-the-steepest-decent-and-conjugate-gradient-methods.png)
+![Alt text](../figs/Search-paths-of-the-steepest-decent-and-conjugate-gradient-methods.png)
 
 
 </font>
@@ -1414,7 +1414,7 @@ $$\beta_k = \frac{\nabla f(x_{k+1})^\top A d_k}{d_k^\top A d_k}.$$
 
 牛顿法, 最陡下降法, 共轭梯度法搜索方向的对比:
 
-![width:800](29-Figure2.2-1.png)
+![width:800](../figs/29-Figure2.2-1.png)
 
 </font>
 
@@ -1597,7 +1597,7 @@ $$y^{\prime}(t)=f(t, y(t)), \quad y\left(t_{0}\right)=y_{0}$$
 
 3. 中心差分：$D_cf\left(x_{j}\right)=\frac{f\left(x_{j+1}\right)-f\left(x_{j-1}\right)}{x_{j+1}-x_{j-1}}$,$f^{\prime}\left(x_{j}\right)=D_cf\left(x_{j}\right)+O\left(\Delta x^2\right)$ 具有`二阶`精度
 
-![width:700](<20.02.01-Finite-difference (1).png>)
+![width:700](<../figs/20.02.01-Finite-difference (1).png>)
 
 
 </font> 
@@ -1859,7 +1859,7 @@ plt.show()
 
 <font size=4>
 
-![width:500](111.png)
+![width:500](../figs/111.png)
 
 
 </font>
@@ -1924,7 +1924,7 @@ plt.show()  # 显示图表
 <font size=4>
 
 
-![width:500](scipy-integrate-solve_bvp-1_00_00.png)
+![width:500](../figs/scipy-integrate-solve_bvp-1_00_00.png)
 
 
 </font>
@@ -2049,16 +2049,16 @@ SymPy 可以作为库集成到其他软件中，为别的软件所用。SageMath
 
 3. 定积分
 
-![Alt text](sy18.webp)
+![Alt text](../figs/sy18.webp)
 
-![Alt text](sy19.png)
+![Alt text](../figs/sy19.png)
 
 
 4. 极限
 
-![Alt text](sy20.webp)
+![Alt text](../figs/sy20.webp)
 
-![Alt text](sy21.png)
+![Alt text](../figs/sy21.png)
 
 
 </font>
@@ -2072,13 +2072,13 @@ SymPy 可以作为库集成到其他软件中，为别的软件所用。SageMath
 
 5. 解非线性方程$x^2−2=0$
 
-![Alt text](sy22.png)
+![Alt text](../figs/sy22.png)
 
 6. 解常微分方程
 
-![Alt text](sy23.webp)
+![Alt text](../figs/sy23.webp)
 
-![Alt text](sy24.png)
+![Alt text](../figs/sy24.png)
 
 
 </font>
@@ -2092,13 +2092,13 @@ SymPy 可以作为库集成到其他软件中，为别的软件所用。SageMath
 
 7. 矩阵特征值
 
-![Alt text](sy25.webp)
+![Alt text](../figs/sy25.webp)
 
-![Alt text](sy26.png)
+![Alt text](../figs/sy26.png)
 
 8. 把贝塞尔函数Jν(z)写成球形贝塞尔函数Jν(z)
 
-![Alt text](sy27.png)
+![Alt text](../figs/sy27.png)
 
 </font>
 
@@ -2159,9 +2159,9 @@ SymPy 可以作为库集成到其他软件中，为别的软件所用。SageMath
 
 ## 3.4 正交试验设计
 
-![Alt text](1-1.png)
+![Alt text](../figs/1-1.png)
 
-![bg right width:400](2-1.png)
+![bg right width:400](../figs/2-1.png)
 
 ---
 
@@ -2177,7 +2177,7 @@ SymPy 可以作为库集成到其他软件中，为别的软件所用。SageMath
 
 </font>
 
-![bg right width:300](ed5dc0184fd3fc044e23bf1879093479.png)
+![bg right width:300](../figs/ed5dc0184fd3fc044e23bf1879093479.png)
 
 ---
 
