@@ -49,7 +49,7 @@ style: |
 
 1. 机器学习技术（包含神经网络和遗传算法）己经被证明可以有效地加速材料的研发进程。人工智能算法分为通用的`Scikit-learn`、`TensorFlow`和`Pytorch`等人工智能框架，以及针对材料性能开发的专用算法，如SISSO、AFLOW-ML、MatMiner等，这些算法有助于预测和优化材料性能。
   
-![width:400](9.png) ![width:400](14.JPG)
+![width:400](../figs/9.png) ![width:400](../figs/14.JPG)
 
 
 </font>
@@ -67,7 +67,7 @@ style: |
 
 2. 在材料科学研究中，建立准确的机器学习模型往往需要“海量”数据进行训练。近年来，美国、欧洲和日本等国的科研人员陆续开发了一系列高效的计算软件、材料数据库和材料人工智能算法。这些计算软件包括Materials Project、AFLOWπ、AiiDA、ASE等，用于材料计算和分析。材料数据库包括ICSD、COD、Materials Project、AFLOW-Lib、Materials Cloud、OQMD、Materials Web、NOMAD、以及日本国立材料科学研究所(NIMS)的数据库和MatNavi检索系统，这些数据库包含了大量的材料信息。主要`材料科学数据库`:
 
-![Alt text](10.JPG)
+![Alt text](../figs/10.JPG)
 
 </font>
 
@@ -119,7 +119,7 @@ Materials Project (MP)计算材料数据库平台(`https://www.materialsproject.
 
 Materials Project数据库存储了几十万条包括能带结构、弹性张量、压电张量等性能的`第一性原理计算`数据。材料体系涉及无机化合物、纳米孔隙材料、嵌入型电极材料和转化型电极材料。
 
-![bg right width:400](11.JPG)
+![bg right width:400](../figs/11.JPG)
 
 </font>
 
@@ -133,7 +133,7 @@ Materials Project数据库存储了几十万条包括能带结构、弹性张量
 
 AFLOW 计 算材料 数据库(`http://www.aflowlib.org/`),是由杜克大学在2011年开发的一个开放数据库。数据库中包含了大量`第一性原理计算`所得的数据，目前已存储了关于无机化合物、二元合金与多元合金等超过557 043 524条涉及2 945 940种材料的结构、性能数据，其中绝大多数数据都是预测得出的，是诸多数据库中数据含量最大的一个。
 
-![bg right width:400](<12 AFLOW数据库数据量统计2020.JPG>)
+![bg right width:400](<../figs/12 AFLOW数据库数据量统计2020.JPG>)
 
 </font>
 
@@ -147,7 +147,7 @@ AFLOW 计 算材料 数据库(`http://www.aflowlib.org/`),是由杜克大学在2
 
 ICSD无机晶体结构数据库(`http://icsd.fizkarlsruhe.de/`)由德国波恩大学等机构合作创建，自1913年起维护至今。它包含超过21万种晶体结构，覆盖了金属、合金、陶瓷等非有机化合物。是全球最大的无机晶体结构数据库。
 
-![bg right width:400](<13 ICSD数据库统计2020.JPG>)
+![bg right width:400](<../figs/13 ICSD数据库统计2020.JPG>)
 
 </font>
 
@@ -227,7 +227,7 @@ Materials Project API提供了许多其他可用于检索各种材料属性和�
 
 Matminer调用数据库：工作流程和功能
 
-![width:800](10.png)
+![width:800](../figs/10.png)
 
 </font>
 
@@ -241,7 +241,7 @@ Matminer调用数据库：工作流程和功能
 
 Matminer调用数据库：数据检索可以轻松地将复杂的在线数据放入数据框中
 
-![width:800](11.png)
+![width:800](../figs/11.png)
 </font>
 
 ---
@@ -298,7 +298,7 @@ $$μ_{i}^{\alpha} = μ_{i}^{\beta}$$
 
 相平衡状态图研究由一种或数种物质所构成的相平衡系统的性质（如沸点、熔点、蒸汽压、溶解度等）与条件（如温度、压力及组成等） 的函数关系，这种关系的图叫`相图（phase diagram）`。
 
-![width:400](9.jpg)
+![width:400](../figs/9.jpg)
 
 </font>
 
@@ -344,7 +344,7 @@ pycalphad 提供读取Thermo Calc TDB文件和 求解多组分多相吉布斯能
 (https://pycalphad.org/)
 ```
 
-![bg right width:300](1.png)
+![bg right width:300](../figs/1.png)
 
 ---
 
@@ -356,8 +356,8 @@ pycalphad 提供读取Thermo Calc TDB文件和 求解多组分多相吉布斯能
 
 1. 使用 TDB 文件计算`等压`二元相图
 
-![width:350](6.png) ![width:350](2.png)
-![width:350](3.png) ![width:350](4.png)
+![width:350](../figs/6.png) ![width:350](../figs/2.png)
+![width:350](../figs/3.png) ![width:350](../figs/4.png)
 
 </font>
 
@@ -415,7 +415,7 @@ plt.show()
 在 CALPHAD 建模中可检查系统中所有组成相的吉布斯能面。nb-re（铌铼）计算给定温度 (2800 K) 下所有相的吉布斯能量作为成分的函数。chi 相具有额外的内部自由度，使其能够针对给定的整体成分呈现多种状态。只有低能态与计算平衡相图相关。
 
 
-      ![Alt text](8.png)
+      ![Alt text](../figs/8.png)
 
 
 </font>
@@ -486,7 +486,7 @@ plt.show()
    
    在热力学中可使用二维图来表达三组分系统中的平衡。
 
-![bg right width:500](8.png)
+![bg right width:500](../figs/8.png)
 
 
 </font>
@@ -639,7 +639,7 @@ eos.plot('Ag-eos.png')
 
 ```
 
-![bg right width:500](Ag-eos.png)
+![bg right width:500](../figs/Ag-eos.png)
 
 </font>
 
@@ -719,7 +719,7 @@ cnt1 = nanotube(6, 0, length=4)
 cnt2 = nanotube(3, 3, length=6, bond=1.4, symbol='Si')
 ```
 
-![Alt text](cnt1.png)  ![Alt text](cnt2.png)
+![Alt text](../figs/cnt1.png)  ![Alt text](../figs/cnt2.png)
 
 </font>
 
@@ -766,7 +766,7 @@ gnr2 = graphene_nanoribbon(2, 6, type='zigzag', saturated=True, C_H=1.1, C_C=1.4
 
 <font size=4>
 
-![Alt text](gnr1.png)  ![Alt text](gnr2.png)
+![Alt text](../figs/gnr1.png)  ![Alt text](../figs/gnr2.png)
 
 </font>
 
