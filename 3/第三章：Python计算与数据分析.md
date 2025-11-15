@@ -167,7 +167,7 @@ $x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$
 
 $f(x) = x^3 - 27$    从 $x_0 = 27$ 开始迭代： 即使从一个相对较远的初始值开始，收敛速度也会很快。
 
-![Alt text](cube_root_27.gif)  ![Alt text](cube_root_27_anim.gif)
+![Alt text](../figs/cube_root_27.gif)  ![Alt text](../figs/cube_root_27_anim.gif)
 
 </font>
 
@@ -182,7 +182,7 @@ $f(x) = x^3 - 27$    从 $x_0 = 27$ 开始迭代： 即使从一个相对较远�
 
 $f(x) = x^3 - 9$    从 $x_0 = 1$ 开始迭代：不是特别好的初始值可能会使下一步长偏离变远。
 
-![Alt text](sqrt_9.gif)   ![Alt text](sqrt_9_anim.gif)  
+![Alt text](../figs/sqrt_9.gif)   ![Alt text](../figs/sqrt_9_anim.gif)  
 
 </font>
 
@@ -198,7 +198,7 @@ $f(x) = x^3 - 9$    从 $x_0 = 1$ 开始迭代：不是特别好的初始值可�
 
 $f(x) = xsin (2.2 x) - 5sin(x)$    从 $x_0 = 18$ 开始迭代：较差的初始值可能不会导致最接近的根。如果初值不接近，则很难找到**多重根**。
 
-![Alt text](sin.gif)  ![Alt text](sin_anim.gif)
+![Alt text](../figs/sin.gif)  ![Alt text](../figs/sin_anim.gif)
 
 </font>
 
@@ -215,7 +215,7 @@ $f(x) = xsin (2.2 x) - 5sin(x)$    从 $x_0 = 18$ 开始迭代：较差的初始
 
 $f(x) = e^x - sin(x)$    从 $x_0 = 2$ 开始迭代：选择一个接近的初始值对于避免像这样的“大旅行”非常重要!
 
-![Alt text](exponential.gif)  ![Alt text](exponential_anim.gif)
+![Alt text](../figs/exponential.gif)  ![Alt text](../figs/exponential_anim.gif)
 
 </font>
 
@@ -652,7 +652,7 @@ $$\nabla f(x, y) = \begin{bmatrix} \frac{\partial f}{\partial x} \\ \frac{\parti
 
 使用Wolfram代码绘制 $f(x, y) = x^2 + y^2$ 的图形并标出$f(x,y)=c$的**水平集（level set**）和梯度向量的方向：
 
-![width:400](a-1.jpg)  ![width:350](b-1.jpg)
+![width:400](../figs/a-1.jpg)  ![width:350](../figs/b-1.jpg)
 3D Contours and gradient for $f(x,y)$
 
 在一个平面上，函数f(x,y)有一个常数值，即$f(x,y)=c$的点的集合是f的**水平集（level set**）或**水平曲线（level curve of f）**。
@@ -703,7 +703,7 @@ $$\begin{equation*}
 T(x,y) = \frac{100}{1+(x-5)^2 + 4(y-2.5)^2},
 \end{equation*}$$
  
-![width:400](c.JPG) 
+![width:400](../figs/c.JPG) 
 Contours and gradient for $T(x,y)$
 
 </font>
@@ -1280,7 +1280,7 @@ $$d_{1}^{\top} A d_{0}=-\nabla f\left(x_{1}\right)^{\top} A d_{0}+\beta_{0} d_{0
 
 **共轭梯度法**可以看作是最陡下降法的改进版本，共轭梯度法通过选择共轭方向，可以更快地接近最优解，减少了震荡现象。
 
-![width:600](Search-paths-of-the-steepest-descent-and-the-conjugate-gradient-methods-on-a-2D-plane_W640.jpg)
+![width:600](../figs/Search-paths-of-the-steepest-descent-and-the-conjugate-gradient-methods-on-a-2D-plane_W640.jpg)
 
 </font>
 
@@ -1399,7 +1399,7 @@ $$\beta_k = \frac{\nabla f(x_{k+1})^\top A d_k}{d_k^\top A d_k}.$$
 
 牛顿法, 最陡下降法, 共轭梯度法搜索方向的对比:
 
-![width:700](f.JPG)
+![width:700](../figs/f.JPG)
 
 </font>
 
@@ -1707,7 +1707,7 @@ $${\displaystyle y_{n+1}=y_{n}+hf(t_{n+1},y_{n+1}).}$$
 **3. 龙格-库塔方法**
 
 
-![width:350](v2-179d9225e7b5cf2de6ecdfd7a3043945_r-1.jpg)
+![width:350](../figs/v2-179d9225e7b5cf2de6ecdfd7a3043945_r-1.jpg)
 
 4. *新状态值的计算*：使用四个斜率的加权平均值来更新状态值：
 
@@ -1953,9 +1953,9 @@ plt.show()  # 显示图表
 
 **计算机代数系统**（Computer Algebra System，缩写作：CAS）是进行符号运算的软件。
 
-![bg right width](71yrLllDokL.jpg)
+![bg right width](../figs/71yrLllDokL.jpg)
 
-![width:400](5-Figure3-1.png)
+![width:400](../figs/5-Figure3-1.png)
 
 </font>
 
@@ -2372,7 +2372,7 @@ Factor A	Factor B	Factor C
 
 常用正交设计表
 
-![Alt text](a.png)
+![Alt text](../figs/a.png)
 
 
 ---
@@ -2380,17 +2380,8 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![Alt text](b.png)
+![Alt text](../figs/b.png)
 
-
-
----
-
-
-
-## 3.4 正交试验设计
-
-![Alt text](c-1.png)
 
 
 ---
@@ -2399,7 +2390,7 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![Alt text](d-1.png)
+![Alt text](../figs/c-1.png)
 
 
 ---
@@ -2408,7 +2399,16 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![Alt text](e1.png)
+![Alt text](../figs/d-1.png)
+
+
+---
+
+
+
+## 3.4 正交试验设计
+
+![Alt text](../figs/e1.png)
 
 
 ---
@@ -2419,7 +2419,7 @@ Factor A	Factor B	Factor C
 
 应用举例:
 
-![Alt text](20210324102131618.png)
+![Alt text](../figs/20210324102131618.png)
 
 
 ---
@@ -2428,7 +2428,7 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![Alt text](%E5%AF%A6%E9%A9%97.jpg)
+![Alt text](../figs/%E5%AF%A6%E9%A9%97.jpg)
 
 
 ---
@@ -2438,7 +2438,7 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![Alt text](images-1.jpg)  ![Alt text](v2-0a2b1c455dbc149f856b5404a9bf647c_1440w.webp)
+![Alt text](../figs/images-1.jpg)  ![Alt text](../figs/v2-0a2b1c455dbc149f856b5404a9bf647c_1440w.webp)
 
 
 ---
@@ -2446,14 +2446,14 @@ Factor A	Factor B	Factor C
 
 ## 3.4 正交试验设计
 
-![width:400](v2-c32ed0763b19466d292da2d2f6c6cca3_1440w.webp)
+![width:400](../figs/v2-c32ed0763b19466d292da2d2f6c6cca3_1440w.webp)
 
 ---
 
 
 ## 3.4 正交试验设计
 
-![Alt text](v2-1ff2eba6080b3a3a5902af258730494b_720w.webp)
+![Alt text](../figs/v2-1ff2eba6080b3a3a5902af258730494b_720w.webp)
 
 ---
 
