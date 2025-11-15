@@ -4,7 +4,7 @@ theme: gaia
 author: Shiyan Pan
 size: 4:3
 footer: '2023-09-16'
-header: '第七章：Python在材料计算领域中的应用'
+header: '第八章：Python在材料计算领域中的应用'
 paginate: true
 style: |
   section a {
