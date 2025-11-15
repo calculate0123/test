@@ -89,7 +89,7 @@ style: |
 
 <font size=5>
 
-![width:800](2.1.png)
+![width:800](../figs/2.1.png)
 
 </font>   
 
@@ -102,7 +102,7 @@ style: |
 <font size=5>
 
 
-![width:700](2.3.png)
+![width:700](../figs/2.3.png)
 
 </font>   
 
@@ -117,7 +117,7 @@ style: |
 
 <font size=5>
 
-![width:800](2.2.png)
+![width:800](../figs/2.2.png)
 
 </font>   
 
@@ -225,7 +225,7 @@ style: |
 - Ndarray 对象
 ndarray 的内部结构:
 
-![width:800](2/2.1.jpg)
+![width:800](../figs/2.1.jpg)
 
 <font size=4>
 跨度可以是负数，这样会使数组在内存中后向移动，切片中 obj[::-1] 或 obj[:,::-1] 就是如此。
@@ -2101,7 +2101,7 @@ print(myvar)
 
 </font> 
 
-![width:300](2/2.3.png)  
+![width:300](../figs/2.31.png)  
 
 ---
 
@@ -2150,7 +2150,7 @@ print(myvar)
 
 </font> 
 
-![width:300](2/2.4.jpg)
+![width:300](../figs/2.4.jpg)
 
 ---
 
@@ -2244,9 +2244,9 @@ dtype: object
 ## 2.2 △ Pandas简介
 - Pandas 数据结构 - DataFrame
 
-![width:500](2/2.5.png)
+![width:500](../figs/2.5.png)
 
-![width:500](2/2.6.png)
+![width:500](../figs/2.6.png)
 
 ---
 
@@ -2337,7 +2337,7 @@ print (df)
 
 从以上输出结果可以知道， DataFrame 数据类型一个表格，包含 rows（行） 和 columns（列）：
 
-![width:500](2/2.7.png)
+![width:500](../figs/2.7.png)
 
 ---
 
@@ -3308,7 +3308,7 @@ email
 
 <center>
 
-![width:400](anatomy.jpg)
+![width:400](../figs/anatomy.jpg)
 
 </center>
 
@@ -3370,7 +3370,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_1.jpeg)
+![Alt text](../figs/Figure_1.jpeg)
 
 </center>
 
@@ -3426,7 +3426,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_2.jpeg)
+![Alt text](../figs/Figure_2.jpeg)
 
 </center>
 
@@ -3496,7 +3496,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_3.jpeg)
+![Alt text](../figs/Figure_3.jpeg)
 
 </center>
 
@@ -3558,7 +3558,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_4.jpeg)
+![Alt text](../figs/Figure_4.jpeg)
 
 </center>
 
@@ -3624,7 +3624,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_5.jpeg)
+![Alt text](../figs/Figure_5.jpeg)
 
 </center>
 
@@ -3681,7 +3681,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_6.jpeg)
+![Alt text](../figs/Figure_6.jpeg)
 
 </center>
 
@@ -3739,7 +3739,7 @@ plt.show()
 
 <center>
 
-![Alt text](Figure_7.jpeg)
+![Alt text](../figs/Figure_7.jpeg)
 
 </center>
 
