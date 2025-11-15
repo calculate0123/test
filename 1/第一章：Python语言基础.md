@@ -320,8 +320,8 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 
 ### <!--fit-->创始人：Guido van Rossum
 
-![bg right height:300px](fig1.1.jpg)  ![height:300](fig1.2.jpg)
-![width:300](fig1.3.jpg)
+![bg right height:300px](../figs/fig1.1.jpg)  ![height:300](../figs/fig1.2.jpg)
+![width:300](../figs/fig1.3.jpg)
 
 ---
 
@@ -453,7 +453,7 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 ### 1.1.3 Python的优势
 
 - 优缺点对比扩展性：
-  - ![width:800](fig1.4.jpg)
+  - ![width:800](../figs/fig1.4.jpg)
 
 ---
 
@@ -493,7 +493,7 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 
 ### 1.1.4 Python的的应用领域
 
-- ![width:800](fig1.5.jpg)
+- ![width:800](../figs/fig1.5.jpg)
 
 ---
 
@@ -530,7 +530,7 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 
 ### 1.2.2 Anaconda的安装
 
-- ![width:800](fig1.6.jpg)
+- ![width:800](../figs/fig1.6.jpg)
 
 ---
 
@@ -546,7 +546,7 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 - 配置Anaconda虚拟环境的步骤：
   1. 打开Anaconda Prompt。
   2. 输入conda create -n your_env_name python=x.x来创建一个新的虚拟环境，其中your_env_name是你想要给虚拟环境命名的名称，x.x是Python的版本号。
-   ![width:600](fig1.6-0.jpg)
+   ![width:600](../figs/fig1.6-0.jpg)
 
 ---  
 
@@ -554,7 +554,7 @@ Python是一种流行的高级编程语言，具有丰富的历史、独特的�
 
 - 配置Anaconda虚拟环境的步骤：
   3. 输入conda activate your_env_name来激活你刚刚创建的虚拟环境。
-   ![width:600](fig1.6-1.jpg)
+   ![width:600](../figs/fig1.6-1.jpg)
   4. 在这个虚拟环境中，你可以使用conda install package_name来安装你需要的包。
 
 ---
@@ -632,14 +632,14 @@ https://www.jetbrains.com/pycharm/download/?section=windows
 
 ### 1.2.3 安装PyCharm
 
-![width:600](fig1.7.jpg)
+![width:600](../figs/fig1.7.jpg)
 
 ---
 
 ### 1.2.3 配置PyCharm
 
 - 在完成安装后，点击PyCharm中的文件，新建项目，更改文件路径，选择合适的编译器，如果没有出现的话，请点击右边的三个点来手动选择，最后点击创建即可。
-![bg right width:500](fig1.8.jpg)
+![bg right width:500](../figs/fig1.8.jpg)
 
 ---
 
@@ -697,7 +697,7 @@ Python的基本语法包括数据类型、变量、运算符和表达式。
 
 2. 变量：
   在Python中，变量用于存储数据值。你可以将数据值分配给变量，并随后引用这些变量以访问数据。变量名是标识符，通常以字母或下划线开头，后跟字母、数字或下划线。变量名区分大小写。
-  ![width:800](fig1.9.jpg)
+  ![width:800](../figs/fig1.9.jpg)
 
 ---
 
@@ -705,7 +705,7 @@ Python的基本语法包括数据类型、变量、运算符和表达式。
 
 3. 运算符：
   Python提供了各种运算符，用于执行数学运算、逻辑运算和比较运算。常见的运算符包括加法、减法、乘法、除法、取余、逻辑与、逻辑或等。  运算符用于对数据进行操作和计算。
-  ![width:800](fig1.10.jpg)
+  ![width:800](../figs/fig1.10.jpg)
 
 ---
 
@@ -714,7 +714,7 @@ Python的基本语法包括数据类型、变量、运算符和表达式。
 3. 表达式：
   表达式是由运算符和操作数（变量、常数或其他表达式）组成的组合，用于生成某个值。
   Python中的表达式可以包含算术表达式、逻辑表达式和条件表达式等。
-  ![width:800](fig1.11.jpg)  
+  ![width:800](../figs/fig1.11.jpg)  
 
 ---
 
@@ -799,14 +799,14 @@ var2 = "Runoob"
   变量[头下标:尾下标]
   ```
 
-  ![bg right width:450](fig1.16.jpg)
+  ![bg right width:450](../figs/fig1.16.jpg)
 
 ---
 
 ### 1.3.1 数据类型
 
 - Python 访问字符串中的值
-  <!-- ![width:300](fig1.18.jpg)  -->
+  <!-- ![width:300](../figs/fig1.18.jpg)  -->
   ```python
   var1 = 'Hello World!'
   var2 = "Runoob"
@@ -817,7 +817,7 @@ var2 = "Runoob"
   var2[1:5]:  unoo
   ```
 
-  ![bg right width:450](fig1.17.jpg)
+  ![bg right width:450](../figs/fig1.17.jpg)
 
 ---
 
@@ -913,7 +913,7 @@ list4 = ['red', 'green', 'blue', 'yellow', 'white', 'black']
 - 列表（list）
   - 访问列表中的值:与字符串的索引一样，列表索引从 0 开始，第二个索引是 1，依此类推。通过索引列表可以进行截取、组合等操作。
   
-  ![width:700](fig1.19.jpg)
+  ![width:700](../figs/fig1.19.jpg)
 
 ---
 
@@ -942,7 +942,7 @@ blue
 - 列表（list）
   - 索引也可以从尾部开始，最后一个元素的索引为 -1，往前一位为 -2，以此类推。
 
-  ![width:700](fig1.20.jpg)
+  ![width:700](../figs/fig1.20.jpg)
 
 ---
 
@@ -968,7 +968,7 @@ yellow
 
 - 列表（list）
   - 使用下标索引来访问列表中的值，也可以使用方括号 [] 的形式截取字符，如下所示：
- ![bg right width:400](fig1.21.jpg)
+ ![bg right width:400](../figs/fig1.21.jpg)
 
  ```python
 nums = [10, 20, 30, 40, 50, 60, 70, 80, 90]
@@ -1229,7 +1229,7 @@ NameError: name 'tup' is not defined
 
 - 元组（tuple）
   - 元组运算符
- ![width:600](fig1.22.jpg)
+ ![width:600](../figs/fig1.22.jpg)
 
 ---
 
@@ -1242,7 +1242,7 @@ NameError: name 'tup' is not defined
 tup = ('Google', 'Runoob', 'Taobao', 'Wiki', 'Weibo','Weixin')
 ```
 
- ![width:800](fig1.23.jpg)
+ ![width:800](../figs/fig1.23.jpg)
 
 ---
 
@@ -1306,7 +1306,7 @@ d = {key1 : value1, key2 : value2, key3 : value3 }
 ### 1.3.1 数据类型
 
 - 字典（dict）
-  ![width:400](fig1.24.jpg)
+  ![width:400](../figs/fig1.24.jpg)
 
   - 注意：dict 作为 Python 的关键字和内置函数，变量名不建议命名为 dict。
   - 值可以取任何数据类型，但键必须是不可变的，如字符串，数字。
@@ -1322,7 +1322,7 @@ d = {key1 : value1, key2 : value2, key3 : value3 }
 tinydict = {'name': 'runoob', 'likes': 123, 'url': 'www.runoob.com'}
 ```
 
-  ![width:800](fig1.35.jpg)
+  ![width:800](../figs/fig1.35.jpg)
 
 ---
 
@@ -1506,7 +1506,7 @@ set2 = set([4, 5, 6, 7])      # 使用 set() 函数从列表创建集合
 ### 1.3.2 变量
 
 - 变量的命名规则
-  ![width:800](fig1.12.jpg)
+  ![width:800](../figs/fig1.12.jpg)
 
   正确的变量命名有助于使代码更易于理解和维护，因此请确保遵循Python的变量命名规则和最佳实践。
 
@@ -1518,7 +1518,7 @@ set2 = set([4, 5, 6, 7])      # 使用 set() 函数从列表创建集合
   - 变量可以通过使用等号 = 运算符来进行赋值。
   - 变量名必须遵循命名规则，如前面所述。
   - 赋值语句的右侧可以是任何表达式，包括常量、变量、运算、函数调用等。
-  ![width:800](fig1.13.jpg)
+  ![width:800](../figs/fig1.13.jpg)
 
 ---
 
@@ -1544,10 +1544,10 @@ set2 = set([4, 5, 6, 7])      # 使用 set() 函数从列表创建集合
 
 - 变量重赋值：
   - 变量的值可以重复赋值，新的值会覆盖旧的值。
-  ![width:600](fig1.14.jpg)
+  ![width:600](../figs/fig1.14.jpg)
 - 删除变量：
   - 使用 del 语句可以删除变量，释放其占用的内存。删除后尝试访问变量会引发 NameError。  
-  ![width:600](fig1.15.jpg)
+  ![width:600](../figs/fig1.15.jpg)
 
 ---
 
@@ -2056,9 +2056,9 @@ else：
 
 ## 1.4.1 条件语句
 
-![width:400](fig1.26.jpg)
+![width:400](../figs/fig1.26.jpg)
 
-![bg right width:400](fig1.26.gif)
+![bg right width:400](../figs/fig1.26.gif)
 
 ---
 
@@ -2115,7 +2115,7 @@ else:
 
 - 循环语句允许执行一个语句或语句组多次，下面是在大多数编程语言中的循环语句的一般形式：
 
-![bg right width:500](fig1.27.jpg)
+![bg right width:500](../figs/fig1.27.jpg)
 
 ---
 
@@ -2166,8 +2166,8 @@ while 判断条件(condition)：
 ## 1.4.2 循环语句
 
 - While 循环语句
-![bg left width:500](fig1.28.jpg)
-![width:400](fig1.28.gif)
+![bg left width:500](../figs/fig1.28.jpg)
+![width:400](../figs/fig1.28.gif)
 
 ---
 
@@ -2257,7 +2257,7 @@ else:
 
 - for 循环语句
 for循环可以遍历任何序列的项目，如一个列表或者一个字符串:
-![bg right width:500](fig1.28.jpg)
+![bg right width:500](../figs/fig1.28.jpg)
 
 ---
 
@@ -2384,7 +2384,7 @@ print "Good bye!"
   如果您使用嵌套循环，break语句将停止执行最深层的循环，并开始执行下一行代码。
 </font>
 
-![bg right width:500](fig1.30.jpg)
+![bg right width:500](../figs/fig1.30.jpg)
 
 ---
 
@@ -2416,7 +2416,7 @@ continue 语句用来告诉Python跳过当前循环的剩余语句，然后继�
 continue语句用在while和for循环中。
 </font>
 
-![bg right:50% width:500](fig1.31.jpg)
+![bg right:50% width:500](../figs/fig1.31.jpg)
 
 ---
 
@@ -3470,7 +3470,7 @@ class ChildClass(ParentClass):
 
 C++和Python在访友问私有成员和函数时的区别
 
- ![width:450](fig1.32a-1.jpg)   ![width:250](fig1.32b-1.jpg) 
+ ![width:450](../figs/fig1.32a-1.jpg)   ![width:250](../figs/fig1.32b-1.jpg) 
 
 
 </font>
