@@ -132,7 +132,7 @@ style: |
 <font size=4>
 
 
-![width:700](8.1.jpg)
+![width:700](../figs/8.1.jpg)
 
 </font> 
 
@@ -334,7 +334,7 @@ https://scikit-learn.org
 
 ## 5.2 机器学习模型构建和常用库
 - scikit-learn的基本功能
-![width:600](6/6.1.png)
+![width:600](../figs/6.1.png)
 ---
 
 
@@ -370,7 +370,7 @@ https://scikit-learn.org
 
 <center>
 
-![width:400](6/6.7.png)
+![width:400](../figs/6.7.png)
 
 </center>
 
@@ -391,7 +391,7 @@ https://scikit-learn.org
 
 <center>
 
-![width:500](6/6.5.png)
+![width:500](../figs/6.5.png)
 
 </center>
 
@@ -407,7 +407,7 @@ https://scikit-learn.org
 
 <center>
 
-![width:500](6/6.6.png)
+![width:500](../figs/6.6.png)
 
 </center>
 
@@ -426,7 +426,7 @@ https://scikit-learn.org
  
 </font>
 
-![width:850](6/6.2.png)
+![width:850](../figs/6.2.png)
 
 ---
 
@@ -443,7 +443,7 @@ https://scikit-learn.org
 
 <center>
 
-![width:400](6/6.3.png)
+![width:400](../figs/6.3.png)
 
 </center>
 
@@ -461,7 +461,7 @@ https://scikit-learn.org
 
 <center>
 
-![width:400](6/6.4.png)
+![width:400](../figs/6.4.png)
 
 </center>
 
@@ -506,7 +506,7 @@ scikit-learn的传统线性回归(最小二乘法)：
 <font size=5>
 
 
-![bg right width:400](linear.JPG)
+![bg right width:400](../figs/linear.JPG)
 
 
 设房屋的面积为 $x_1$，房龄为 $x_2$，售出价格为 $y$。我们需要建立基于输入 $x_1$ 和 $x_2$ 来计算输出 $y$ 的表达式，也就是模型（model）。顾名思义，线性回归假设输出与各个输入之间是线性关系：
@@ -765,7 +765,7 @@ Logistic回归（Logistic Regression，简称LR）是一种常用的处理二类
 
 <center>
 
-![Alt text](logistic-1.png)
+![Alt text](../figs/logistic-1.png)
 
 </center>
 
@@ -1205,7 +1205,7 @@ plt.show()
 ## 5.2 机器学习模型构建和常用库
 <font size=5>
 
-![width:700](6/6.3.png)
+![width:700](../figs/6.3.png)
 
 </font>
 
