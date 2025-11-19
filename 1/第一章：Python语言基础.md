@@ -2112,8 +2112,6 @@ else:
     print 'roadman'     # 条件均不成立时输出
 ```
 
-```result
-```
 
 ---
 
