@@ -10,6 +10,7 @@ style: |
   section a {
       font-size: 100px;
   }
+math: mathjax
 ---
 
 
@@ -99,8 +100,6 @@ def hello_world():
     print("Hello, World!")
 ```
 
-```result
-```
 
 </font>
 
